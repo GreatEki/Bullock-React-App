@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Acme|Archivo+Narrow|Bangers|Anton|Dokdo|Lato|Pacifico|Allan');
+:root {
+    --bg-color: whitesmoke;
+    --site-font: Archivo Narrow;
+    --site-text-color: rgb(43, 42, 42);
+    --ft-color: black;
+  
+  }
+  
+  .site-font {
+    font-family: var(--site-font);
+    color: var(--site-text-color);
+  }
+  .bg-container {
+    background-color: var(--bgcolor);
+  }
+
+  .bg-footer {
+      background-color: gold;
+  }
+/* Footer */
+.footer-font {
+    font-family: var(--site-font);
+    color: var(--ft-color);
+    font-size: 20px;
+}
+
+.footer-nav {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    list-style: none;
+    justify-content: space-evenly;
+}
+
+.footer-nav li a {
+    color: green;
+    text-decoration: none;
+    margin-right: 30px;
+}
+
+.footer-section.Contact-Us {
+    align-items: center;
+}
+
+
+a i.fab.fa-facebook:hover {
+  color: blue;
+}
+a i.fab.fa-instagram:hover {
+  color: palevioletred;
+} 
+

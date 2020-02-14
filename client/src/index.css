@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css?family=Acme|Archivo+Narrow|Bangers|Anton|Dokdo|Lato|Pacifico|Allan');
+
+:root {
+	--bg-color: lightslategray;
+	--site-font: Archivo Narrow;
+	--site-text-color: rgb(43, 42, 42);
+	--bg-secondary-color: gold;
+	--site-font-2: Lato sans-serif;
+}
+
+.site-font {
+	font-family: var(--site-font);
+	color: var(--site-text-color);
+}
+
+.site-font-lg {
+	letter-spacing: 2px;
+	line-height: 2;
+	font-size: 18px;
+	font-family: var(--site-font);
+}
+
+.site-font-2 {
+	font-size: 18px;
+	letter-spacing: 2px;
+	line-height: 2;
+}
+
+.bg-container {
+	background-color: var(--bgcolor);
+}
+
+.bg-secondary {
+	background-color: var(--bg-color) !important;
+	color: black;
+}
+
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow-x: hidden;
+	background-color: var(--bg-color);
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+		monospace;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.logo {
+	border: 5px yellow solid;
+	border-radius: 50%;
+	width: 60%;
+}
+
+.col-12.col-lg-8 .lg-heading {
+	font-size: 5rem;
+	font-weight: bolder;
+	text-align: left;
+}
+
+.lg-heading small {
+	font-size: 32px;
+}
+
+.motto {
+	font-style: italic;
+}
+
+img.brand-sponsor {
+	height: 20%;
+	width: 15%;
+}
+
+.dropdown-item.auth {
+	font-family: Lato;
+	color: blue !important;
+	font-size: 14px !important;
+}
+
+/* Navigation*/
+a.nav-item.nav-link {
+	font-size: 22px !important;
+	color: white !important;
+}
+
+/* Home Page */
+.card.offer {
+	height: 350px;
+}
+
+.h1-text {
+	font-family: Anton sans-serif;
+	font-weight: bold;
+	font-size: 65px;
+}
+
+.carousel-pics {
+	width: 100%;
+	height: 600px;
+}
+
+.card-title.stand {
+	font-family: Acme;
+	font-size: 24px;
+	font-weight: bolder;
+}
+
+.types {
+	background: var(--bg-secondary-color);
+}
+
+a.card-links {
+	color: rgb(61, 54, 54);
+	text-decoration: none;
+	font-family: Archivo Narrow;
+}
+
+a.card-links:hover {
+	text-decoration-color: blue;
+	z-index: -1;
+	transition: 1s;
+	padding: 0.1rem 0.1rem;
+}
+
+img.card-img {
+	height: 100%;
+	width: 100%;
+}
+
+.del {
+	text-decoration: line-through;
+	text-decoration-style: double;
+}
+
+/* Shop Page Styling */
+
+.shop-pic {
+	width: 100%;
+	height: 200px;
+}
+
+.prod-card {
+	background: white;
+}
+
+.buy-btn {
+	color: black !important;
+}
+
+.buy-btn:hover {
+	text-decoration: none;
+	font-weight: bold;
+	background-color: var(--bg-secondary-color);
+	color: black;
+}
+
+/* Product Page Styling */
+.img-product {
+	width: 70%;
+	height: 300px;
+	margin: 0% 25% 0% 10%;
+}
+
+/* Contact Page Styling */
+.d-flex.flex-column .address {
+	color: white;
+	background: black;
+	margin: 20px 20px;
+	font-size: 1.5rem;
+	padding: 0.5rem 1.5rem;
+	border: 2px solid yellow;
+	text-align: center;
+}
+
+.d-flex.flex-column .address:hover {
+	transition: 1s;
+	padding: 0.1rem 0.5rem;
+	z-index: 2;
+	font-size: 2.5rem;
+}
+
+.d-flex.flex-column .address span {
+	color: gold;
+}
+
+.days-open {
+	margin-left: 15%;
+	font-weight: bolder;
+	margin-bottom: 20%;
+}
