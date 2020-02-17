@@ -18,7 +18,7 @@ const Product = props => {
 	useEffect(() => {
 		getProd(id);
 		//console.log(product);
-	}, []);
+	}, [id]);
 
 	return (
 		<main>

@@ -5,14 +5,16 @@ import { Link } from 'react-router-dom';
 
 const Cart = () => {
 	var res = [];
+	const [products, setProducts] = useState([]);
 	useEffect(() => {
 		const localData = localStorage.getItem('cartProducts');
 
 		res = JSON.parse(localData);
 		console.log(res);
+		setProducts(res);
 
-		//console.log(cartItems);
-	}, [res]);
+		//console.log(products);
+	}, []);
 	return (
 		<main>
 			<Navbar />
@@ -39,8 +41,8 @@ const Cart = () => {
 			</Link>
 
 			<section className='container my-4'>
-				{res ? (
-					res.map(prod => {
+				{products ? (
+					products.map(prod => {
 						return (
 							<div className='card m-0'>
 								<div className='card-header row m-0'>

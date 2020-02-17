@@ -24,7 +24,8 @@ const Shop = () => {
 					</Link>{' '}
 					<Link
 						to='/cart/overview'
-						className='active site-font text-decoration-none'
+						className='active site-font
+						text-decoration-none'
 					>
 						{' '}
 						Shop

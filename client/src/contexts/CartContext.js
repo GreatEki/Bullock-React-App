@@ -1,5 +1,4 @@
 import React, { createContext, useState } from 'react';
-import { ProductContext } from './ProductContext';
 import uuid from 'uuid/v4';
 import { withRouter } from 'react-router-dom';
 
