@@ -20,6 +20,11 @@ const Product = props => {
 		//console.log(product);
 	}, [id]);
 
+	const handleSubmit = e => {
+		e.preventDefault();
+		addToCart(product, size, qty);
+	};
+
 	return (
 		<main>
 			<Navbar />
@@ -52,17 +57,17 @@ const Product = props => {
 								"How to Order"
 							</Link>
 							and policy on
-							<Link href='/delivery' className='link'>
+							<Link to='/delivery' className='link'>
 								"Delivery"
 							</Link>
 							and
-							<Link href='/delivery-timelines' className='link'>
+							<Link to='/delivery-timelines' className='link'>
 								Delivery Time
 							</Link>
 							to properly place your order or simply scroll down to Read.
 						</p>
 
-						<form onSubmit={e => addToCart(e, product, size, qty)}>
+						<form onSubmit={e => handleSubmit(e)}>
 							<h3 className='site-font'> Select your size </h3>
 							<div className='form-group site-font'>
 								<select

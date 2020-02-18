@@ -1,20 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useContext } from 'react';
 import Navbar from './Navbar';
 import Searchtab from './view-templates/Searchtab';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../contexts/CartContext';
 
 const Cart = () => {
-	var res = [];
-	const [products, setProducts] = useState([]);
+	const { cartProducts, getCartItems, cartItem } = useContext(CartContext);
+
 	useEffect(() => {
-		const localData = localStorage.getItem('cartProducts');
-
-		res = JSON.parse(localData);
-		console.log(res);
-		setProducts(res);
-
-		//console.log(products);
+		localStorage.setItem('cartProducts', JSON.stringify(cartItem));
+		getCartItems();
 	}, []);
+
+	/*
+	useEffect(() => {
+		getCartItems();
+	}, []);
+	*/
 	return (
 		<main>
 			<Navbar />
@@ -41,10 +43,10 @@ const Cart = () => {
 			</Link>
 
 			<section className='container my-4'>
-				{products ? (
-					products.map(prod => {
+				{cartProducts ? (
+					cartProducts.map(prod => {
 						return (
-							<div className='card m-0'>
+							<div className='card m-0' key={prod.title}>
 								<div className='card-header row m-0'>
 									<div className='col-3'>
 										<b>Product Detail</b>
@@ -83,7 +85,10 @@ const Cart = () => {
 									</div>
 
 									<div className='col-3 text-right'>
-										<a className='text-danger'> Remove Item </a>
+										<btn className='text-danger btn btn-warning' role='button'>
+											{' '}
+											Remove Item{' '}
+										</btn>
 									</div>
 								</section>
 							</div>
