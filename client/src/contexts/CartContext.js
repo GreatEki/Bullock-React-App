@@ -9,13 +9,17 @@ const CartContextProvider = props => {
 	const [cartItem, setCartItem] = useState([]);
 
 	//This is the state that displays the products in the Cart Page
-	const [cartProducts, setCartProducts] = useState([]);
+	const [cartProducts, setCartProducts] = useState([], () => {
+		var localData = localStorage.getItem('cartProducts');
+		return localData ? JSON.parse(localData) : [];
+	});
+
+	const [totalPrice, setTotalPrice] = useState(0);
 
 	const addToCart = (product, size, qty) => {
 		//e.preventDefault();
 
 		var val = uuid();
-
 		var item = product[val];
 
 		if (!item) {
@@ -29,6 +33,7 @@ const CartContextProvider = props => {
 			};
 		}
 
+		setTotalPrice(totalPrice => (totalPrice += item.price));
 		setCartItem(cartItem => [...cartItem, item]);
 
 		//localStorage.setItem('cartProducts', JSON.stringify(cartItem));
@@ -45,7 +50,7 @@ const CartContextProvider = props => {
 
 	return (
 		<CartContext.Provider
-			value={{ addToCart, cartProducts, getCartItems, cartItem }}
+			value={{ addToCart, cartProducts, getCartItems, cartItem, totalPrice }}
 		>
 			{props.children}
 		</CartContext.Provider>
