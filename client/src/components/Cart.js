@@ -8,11 +8,11 @@ const Cart = () => {
 	const { cartProducts, getCartItems, cartItem, totalPrice } = useContext(
 		CartContext
 	);
-	/*
+
+	//The method window.scrollTo() ensures that the rendered component loads from the top of the page.
 	useEffect(() => {
-		getCartItems();
+		window.scrollTo(0, 0);
 	}, []);
-	*/
 
 	useEffect(() => {
 		localStorage.setItem('cartProducts', JSON.stringify(cartItem));
@@ -45,6 +45,10 @@ const Cart = () => {
 			</Link>
 
 			<section className='container my-4'>
+				<h4 className='site-font-sm text-right'>
+					{' '}
+					You have {cartProducts.length} item in your cart{' '}
+				</h4>
 				{cartProducts.length > 0 ? (
 					cartProducts.map(prod => {
 						return (
@@ -54,12 +58,12 @@ const Cart = () => {
 										<b>Product Detail</b>
 									</div>
 									<div className='col-3'>
-										<b>Quantity</b>
+										<b className='text-center'>Quantity</b>
 									</div>
 
 									<div className='col-3'>
 										{' '}
-										<b>Item Price</b>
+										<b className='text-center'>Item Price</b>
 									</div>
 
 									<div className='col-3 text-right'>
@@ -79,21 +83,29 @@ const Cart = () => {
 											{' '}
 											{prod.title}{' '}
 										</p>
+										<p className='site-font-sm text-muted'> {prod.size} </p>
 									</div>
 
 									<div className='col-3'>
-										<h3 className='site-font'> {prod.qty} </h3>
+										<h3 className='site-font mx-4'> {prod.qty} </h3>
 									</div>
 
 									<div className='col-3'>
-										<h4 className='text-muted'> {prod.price} </h4>
+										<h4 className='text-muted mx-4'>
+											{' '}
+											<del className='del'>N </del>
+											{prod.price}{' '}
+										</h4>
 									</div>
 
 									<div className='col-3 text-right'>
-										<btn className='text-danger btn btn-warning' role='button'>
+										<button
+											className='text-danger btn btn-warning'
+											role='button'
+										>
 											{' '}
 											Remove Item{' '}
-										</btn>
+										</button>
 									</div>
 								</section>
 							</div>
@@ -112,6 +124,15 @@ const Cart = () => {
 					TOTAL PRICE: <del className='del'>N</del>
 					{totalPrice}{' '}
 				</h2>
+
+				<div className='text-right mt-5'>
+					<Link
+						className='btn btn-outline-warning ml-5 my-3'
+						to='/cart/checkout'
+					>
+						<i class='fas fa-long-arrow-alt-right'></i> Proceed TO CheckOut
+					</Link>
+				</div>
 			</section>
 		</main>
 	);

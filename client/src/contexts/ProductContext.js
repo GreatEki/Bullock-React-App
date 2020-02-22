@@ -7,12 +7,14 @@ const ProductContextProvider = props => {
 	const [products, setProducts] = useState([]);
 	const [product, setProduct] = useState([]);
 	const [searchProd, setSearchProd] = useState([]);
+	const [hasLoaded, setHasLoaded] = useState(false);
 
 	const retrieveProd = async () => {
 		try {
 			const res = await axios.get('http://localhost:8080/api/shop');
 
 			setProducts(res.data);
+			setHasLoaded(true);
 			//console.log(products);
 		} catch (err) {
 			console.log(err);
@@ -49,7 +51,8 @@ const ProductContextProvider = props => {
 				product,
 				retrieveProd,
 				searchProd,
-				handleSearch
+				handleSearch,
+				hasLoaded
 			}}
 		>
 			{props.children}

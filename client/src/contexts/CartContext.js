@@ -16,9 +16,20 @@ const CartContextProvider = props => {
 
 	const [totalPrice, setTotalPrice] = useState(0);
 
+	const validate = (size, qty) => {
+		let errors = {};
+		if (!size || size === 'nil') {
+			errors.size = 'Choose your size appropriately';
+		}
+		if (!qty || qty === 0) {
+			errors.qty = 'Enter the quantity you wish to puchase';
+		}
+
+		return errors;
+	};
+
 	const addToCart = (product, size, qty) => {
 		//e.preventDefault();
-
 		var val = uuid();
 		var item = product[val];
 
@@ -29,6 +40,7 @@ const CartContextProvider = props => {
 				imagePath: product.imagePath,
 				size: size,
 				qty: qty,
+
 				price: product.price * qty
 			};
 		}
@@ -48,9 +60,21 @@ const CartContextProvider = props => {
 		setCartProducts(result);
 	};
 
+	/*
+	const removeItem = (id) => {
+
+	}*/
+
 	return (
 		<CartContext.Provider
-			value={{ addToCart, cartProducts, getCartItems, cartItem, totalPrice }}
+			value={{
+				addToCart,
+				cartProducts,
+				getCartItems,
+				cartItem,
+				totalPrice,
+				validate
+			}}
 		>
 			{props.children}
 		</CartContext.Provider>

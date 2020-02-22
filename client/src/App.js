@@ -11,6 +11,7 @@ import Contact from './components/Contact';
 import Search from './components/Search';
 import Cart from './components/Cart';
 import CartContextProvider from './contexts/CartContext';
+import Checkout from './components/CheckOut';
 
 function App() {
 	return (
@@ -24,6 +25,7 @@ function App() {
 						<Route path='/contact' component={Contact} />
 						<Route path='/product/search/:val' component={Search} />
 						<Route path='/cart/overview' component={Cart} />
+						<Route path='/cart/checkout' component={Checkout} />
 					</CartContextProvider>
 				</ProductContextProvider>
 			</BrowserRouter>

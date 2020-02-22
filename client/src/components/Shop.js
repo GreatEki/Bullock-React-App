@@ -67,6 +67,7 @@ const Shop = () => {
 					})}
 				</div>
 			</main>
+
 			<Footer />
 		</div>
 	);
