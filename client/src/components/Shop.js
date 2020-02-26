@@ -39,7 +39,7 @@ const Shop = () => {
 					{/* My Map method that loops through and return products listed in the database */}
 					{products.map(product => {
 						return (
-							<div className='col-lg-3 col-6' key={product._id}>
+							<div className='col-lg-3 col-12' key={product._id}>
 								<div className='prod-card card mt-5'>
 									<img
 										className='shop-pic'

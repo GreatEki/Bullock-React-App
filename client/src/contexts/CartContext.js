@@ -14,7 +14,11 @@ const CartContextProvider = props => {
 		return localData ? JSON.parse(localData) : [];
 	});
 
-	const [totalPrice, setTotalPrice] = useState(0);
+	//This reps our CartTotal Price
+	let [totalPrice, setTotalPrice] = useState(0);
+
+	//This reps the charge on delivery
+	const [deliveryRate, setDeliveryRate] = useState(1000);
 
 	const validate = (size, qty) => {
 		let errors = {};
@@ -73,7 +77,8 @@ const CartContextProvider = props => {
 				getCartItems,
 				cartItem,
 				totalPrice,
-				validate
+				validate,
+				deliveryRate
 			}}
 		>
 			{props.children}

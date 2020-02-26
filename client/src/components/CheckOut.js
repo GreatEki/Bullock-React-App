@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Navbar from './Navbar';
 import Searchtab from './view-templates/Searchtab';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../contexts/CartContext';
 const Checkout = () => {
+	let [grandTotal, setGrandTotal] = useState(0);
+	const { cartProducts, totalPrice, deliveryRate } = useContext(CartContext);
+
+	useEffect(() => {
+		setGrandTotal(totalPrice + deliveryRate);
+	}, [grandTotal]);
 	return (
 		<main>
 			<Navbar />
@@ -35,10 +42,6 @@ const Checkout = () => {
 
 			{/* Checkout Form Page */}
 			<main className='container my-5'>
-				<div>
-					<h3 className='text-right'> GRAND TOTAL: </h3>
-				</div>
-
 				<div className='row my-5'>
 					<div className='col-8 offset-lg-2 bg-white'>
 						{/* Order Summary Section */}
@@ -53,155 +56,104 @@ const Checkout = () => {
 						</div>
 
 						{/* Products details are listed here*/}
-						<div className='row px-4'>
-							<div className='col-8 mt-5'>
-								<p> Addidas All Star </p>
-								<p>size_40</p>
-								<p> 2 qty </p>
-							</div>
+						{cartProducts.map(product => {
+							return (
+								<div className='row px-4' key={product.id}>
+									<div className='col-8 mt-5'>
+										<img
+											src={`/products/${product.imagePath}`}
+											className='d-inline cart-image'
+											alt=' '
+										/>
+										<p className='site-font d-inline p-0'> {product.title} </p>
+										<br />
+										<span className='text-muted'>{product.size}</span>
+										<p className='text-muted'>Quantity: {product.qty}</p>
+									</div>
 
-							<div className='col-4 mt-5'>
-								<p className='text-right'>
-									{' '}
-									<del className='del'>N</del> 6 000{' '}
-								</p>
-							</div>
-						</div>
+									<div className='col-4 mt-5'>
+										<p className='text-right'>
+											{' '}
+											<del className='del'>N</del>
+											{product.price}{' '}
+										</p>
+									</div>
+								</div>
+							);
+						})}
+
 						<div className='row px-4'>
-							<div className='col-8 mt-5'>
+							<div className='col-8 mt-3'>
 								<h5 className='site-font'> SUBTOTAL </h5>
 							</div>
 
-							<div className='col-4 mt-5'>
-								<p className='text-right'>
-									<del className='del'>N</del> 12 000
-								</p>
+							<div className='col-4 mt-3'>
+								<h5 className='text-right'>
+									<del className='del'>N</del> {totalPrice}
+								</h5>
 							</div>
 						</div>
 						<div className='row px-4'>
-							<div className='col-8 mt-5'>
+							<div className='col-8 mt-3'>
 								<h5 className='site-font'> DELIVERY CHARGE </h5>
 							</div>
 
-							<div className='col-4 mt-5'>
-								<p className='text-right'>
-									<del className='del'>N</del> 1 000
-								</p>
+							<div className='col-4 mt-3'>
+								<h5 className='text-right'>
+									<del className='del'>N</del> {deliveryRate}
+								</h5>
 							</div>
 						</div>
 						<div className='row px-4'>
 							<div className='col-8 mt-5'>
-								<h5 className='site-font text-danger'> GRAND TOTAL </h5>
+								<h3 className='site-font text-danger'> GRAND TOTAL </h3>
 							</div>
 
 							<div className='col-4 mt-5'>
-								<p className='text-right'>
-									<del className='del'>N</del> 13 000
-								</p>
+								<h3 className='text-right'>
+									<del className='del'>N</del> {grandTotal}
+								</h3>
 							</div>
 						</div>
-						<hr />
-						{/* Shipping Section */}
-						<div className='px-4'>
-							<h5> SHIPPING FEES </h5>
-						</div>
-						<hr />
-						<p className='text-justify px-4 site-font'>
-							<span className='text-danger'>NOTE: </span>
-							Please be informed that Standard Shipping rates may vary based on
-							location. Kindly go through the charges incurable for different
-							locations.
-						</p>
 
-						{/* Tier One Location */}
-						<bold className='site-font my-3'>
-							<h5 className='px-4 text-muted text-center'>
+						{/* *Payment Section */}
+						<section className='px-4 mt-4'>
+							<p className='font-weight-bold'>
+								Choose Preferred Payment Option:
+							</p>
+							<input
+								type='radio'
+								id='paystack'
+								value='paystack'
+								name='payment_method'
+							/>
+							<label for='paystack' className='payment'>
+								Pay Now with PayStack
+							</label>
+							<br />
+
+							<input
+								type='radio'
+								id='cashondelivery'
+								value='cashondelivery'
+								name='payment_method'
+							/>
+							<label for='cashondelivery' className='payment'>
+								Cash On Delivery
+							</label>
+
+							<div className='site-font mt-3'>
+								<span className='text-danger'>NOTE:</span>{' '}
+								<b>
+									Cash on delivery payment are subject to specific terms and
+									conditions which may change overtime.{' '}
+								</b>
+							</div>
+
+							<button className='btn btn-block btn-warning my-4 mx-auto place-order'>
 								{' '}
-								TIER ONE LOCATIONS
-							</h5>
-						</bold>
-						<section className='row px-4'>
-							<div className='col-4 site-font'>
-								<h5>LAGOS</h5>
-							</div>
-							<div className='col-4 site-font'>
-								<h5 className='text-center'> PRICE </h5>
-							</div>
-
-							<div className='col-4 site-font'>
-								<h5 className='text-right'> DELIVERY TIMELINE</h5>
-							</div>
-						</section>
-						<section className='row px-4'>
-							<div className='col-4 site-font'>
-								<h5>
-									This categorizes major cities and urban centres in Lagos.
-								</h5>
-							</div>
-							<div className='col-4 site-font'>
-								<h5 className='text-center'>
-									{' '}
-									<del className='del'>N </del>1, 000{' '}
-								</h5>
-							</div>
-
-							<div className='col-4 site-font'>
-								<h5 className='text-right'> 1 -2 days</h5>
-							</div>
-						</section>
-
-						<bold className='site-font my-4'>
-							<h5 className='px-4 text-muted text-center'>
-								{' '}
-								TIER TWO LOCATIONS
-							</h5>
-						</bold>
-
-						<section className='row px-4'>
-							<div className='col-4 site-font'>
-								<h5>OGUN, IBADAN, ABEOKUTA, ABUJA, PORT-HACOURT</h5>
-							</div>
-							<div className='col-4 site-font'>
-								<h5 className='text-center'>
-									{' '}
-									<del className='del'>N </del>2, 300{' '}
-								</h5>
-							</div>
-
-							<div className='col-4 site-font'>
-								<h5 className='text-right'> 3 - 5 </h5>
-							</div>
-						</section>
-
-						<bold className='site-font my-4'>
-							<h5 className='px-4 text-muted text-center'>
-								{' '}
-								TIER THREE LOCATIONS
-							</h5>
-						</bold>
-
-						<section className='row px-4'>
-							<div className='col-4 site-font'>
-								<small className='text-justify'>
-									This comprises certain cities in Lagos and other states across
-									the federation.
-								</small>
-								<p>
-									{' '}
-									Iyana-Ibeshe, Iyana-Ipaja, Majidun, Okokomaiko and Other
-									States{' '}
-								</p>
-							</div>
-							<div className='col-4 site-font'>
-								<h5 className='text-center'>
-									{' '}
-									<del className='del'>N </del>3, 000{' '}
-								</h5>
-							</div>
-
-							<div className='col-4 site-font'>
-								<h5 className='text-right'> 5 days </h5>
-							</div>
+								PLACE ORDER{' '}
+							</button>
 						</section>
 					</div>
 				</div>

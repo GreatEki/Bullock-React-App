@@ -50,6 +50,7 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	overflow-x: hidden;
 	background-color: var(--bg-color);
+	max-width: 100%;
 }
 
 code {
@@ -62,7 +63,7 @@ code {
 }
 
 .logo {
-	border: 5px yellow solid;
+	border: 5px solid yellow;
 	border-radius: 50%;
 	width: 60%;
 }
@@ -212,4 +213,24 @@ img.card-img {
 	width: 100px;
 	height: 100px;
 	margin: 0%;
+}
+
+/* Checkout Page Styling*/
+input[type='radio'] {
+	height: 25px;
+	width: 25px;
+	background-color: gold;
+}
+
+label.payment {
+	padding-left: 10px;
+	min-height: 25px;
+	font-weight: bold;
+	margin-top: 0%;
+}
+
+.place-order {
+	width: 90% !important;
+	height: 4rem;
+	font-weight: bolder;
 }
