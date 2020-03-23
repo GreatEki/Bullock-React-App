@@ -9,6 +9,7 @@ const Checkout = () => {
 
 	useEffect(() => {
 		setGrandTotal(totalPrice + deliveryRate);
+		//eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [grandTotal]);
 	return (
 		<main>

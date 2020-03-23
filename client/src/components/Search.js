@@ -10,6 +10,7 @@ const Search = props => {
 
 	useEffect(() => {
 		handleSearch(val);
+		//eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [val]);
 	return (
 		<main>

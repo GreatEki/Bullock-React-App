@@ -25,10 +25,13 @@ router.get('/search/:value', (req, res) => {
 				if (products.length > 1) {
 					return res.json(products);
 				} else {
-					res.json('No record of this found');
+					return res.status(400).json({
+						success: false,
+						error: 'No record of this found'
+					});
 				}
 			} else {
-				res.json(err);
+				return res.json(err);
 			}
 		}
 	);

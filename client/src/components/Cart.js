@@ -5,9 +5,13 @@ import { Link } from 'react-router-dom';
 import { CartContext } from '../contexts/CartContext';
 
 const Cart = () => {
-	const { cartProducts, getCartItems, cartItem, totalPrice } = useContext(
-		CartContext
-	);
+	const {
+		cartProducts,
+		getCartItems,
+		cartItem,
+		totalPrice,
+		removeItem
+	} = useContext(CartContext);
 
 	//The method window.scrollTo() ensures that the rendered component loads from the top of the page.
 	useEffect(() => {
@@ -16,7 +20,9 @@ const Cart = () => {
 
 	useEffect(() => {
 		localStorage.setItem('cartProducts', JSON.stringify(cartItem));
+		//JSON.stringify() converts a Javascript object into a JSON string
 		getCartItems();
+		//esline-disable-next-line react-hook/exhaustive-deps
 	}, [cartItem]);
 
 	return (
@@ -31,8 +37,7 @@ const Cart = () => {
 					</Link>{' '}
 					<Link
 						to='/cart/overview'
-						className='active site-font text-decoration-none'
-					>
+						className='active site-font text-decoration-none'>
 						{' '}
 						Shopping Cart
 					</Link>
@@ -77,6 +82,7 @@ const Cart = () => {
 										<img
 											className='d-inline cart-image'
 											src={`/products/${prod.imagePath}`}
+											alt={prod.title}
 										/>
 
 										<p className='site-font-sm text-muted d-inline'>
@@ -101,8 +107,7 @@ const Cart = () => {
 									<div className='col-3 text-right'>
 										<button
 											className='text-danger btn btn-warning'
-											role='button'
-										>
+											onClick={() => removeItem(prod.id)}>
 											{' '}
 											Remove Item{' '}
 										</button>
@@ -128,8 +133,7 @@ const Cart = () => {
 				<div className='text-right mt-5'>
 					<Link
 						className='btn btn-outline-warning ml-5 my-3'
-						to='/cart/checkout'
-					>
+						to='/cart/checkout'>
 						<i class='fas fa-long-arrow-alt-right'></i> Proceed TO CheckOut
 					</Link>
 				</div>

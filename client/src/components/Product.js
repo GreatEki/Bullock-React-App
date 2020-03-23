@@ -22,9 +22,10 @@ const Product = props => {
 		window.scrollTo(0, 0);
 	}, []);
 
+	//This gets the particular product the customer selects in our Product Page/Component
 	useEffect(() => {
 		getProd(id);
-		//console.log(product);
+		//eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [id]);
 
 	//This watches the errors state when validating product form
@@ -38,6 +39,8 @@ const Product = props => {
 		} else {
 			setSubmitting(false);
 		}
+
+		//eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [errors]);
 
 	//This methods handles the onClick() event in our Product.js Component
@@ -98,8 +101,7 @@ const Product = props => {
 								<select
 									className={errors.qty && 'errors-input form-control'}
 									onChange={e => setSize(e.target.value)}
-									value={size}
-								>
+									value={size}>
 									<optgroup label='Available Wallet Sizes'>
 										<option value='null'> nil </option>
 										<option value='not_available'> N/A </option>
@@ -141,8 +143,7 @@ const Product = props => {
 								<button
 									className='btn buy-btn btn-block rounded btn-md btn-warning'
 									type='submit'
-									disabled={isSubmitting}
-								>
+									disabled={isSubmitting}>
 									Add To Cart
 								</button>
 							</div>

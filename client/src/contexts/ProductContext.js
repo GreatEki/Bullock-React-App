@@ -40,6 +40,9 @@ const ProductContextProvider = props => {
 			setSearchProd(res.data);
 		} catch (err) {
 			console.log(err);
+
+			setSearchProd([]);
+			return searchProd;
 		}
 	};
 
@@ -53,8 +56,7 @@ const ProductContextProvider = props => {
 				searchProd,
 				handleSearch,
 				hasLoaded
-			}}
-		>
+			}}>
 			{props.children}
 		</ProductContext.Provider>
 	);

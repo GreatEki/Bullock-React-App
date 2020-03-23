@@ -10,7 +10,7 @@ import PercentDiscount from '../images/percentdiscount.jpg';
 import JakobOwens from '../images/jakob-owens.jpg';
 
 //Favourite Brands Imports
-//import AddidasAllStar from "../images/addidas-allstar.jpg";
+import AddidasAllStar from "../images/addidas-allstar.jpg";
 import BlackAirforceOne from '../images/black-airforce-one.jpg';
 import NikeAirMaxWhiteBlack from '../images/nike-airmax-white-black.jpg';
 import NikeJoyride from '../images/nike-joyride.jpg';
@@ -159,7 +159,7 @@ const Home = () => {
 								<div className='row no-gutters'>
 									<div className='col-6'>
 										<img
-											src={'AddidasAllStar'}
+											src={AddidasAllStar}
 											className='card-img p-0'
 											alt=' '
 										/>

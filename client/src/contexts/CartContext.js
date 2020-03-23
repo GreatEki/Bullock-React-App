@@ -61,13 +61,16 @@ const CartContextProvider = props => {
 	const getCartItems = () => {
 		var localData = localStorage.getItem('cartProducts');
 		var result = JSON.parse(localData);
+		//JSON.parse() converts a JSON string into a Javascript object
 		setCartProducts(result);
 	};
 
-	/*
-	const removeItem = (id) => {
+	const removeItem = id => {
+		setCartProducts(cartProducts.filter(item => item.id !== id));
+		localStorage.removeItem(id);
 
-	}*/
+		//Reset the totalPrice to reflect the new Price
+	};
 
 	return (
 		<CartContext.Provider
@@ -78,9 +81,9 @@ const CartContextProvider = props => {
 				cartItem,
 				totalPrice,
 				validate,
-				deliveryRate
-			}}
-		>
+				deliveryRate,
+				removeItem
+			}}>
 			{props.children}
 		</CartContext.Provider>
 	);
