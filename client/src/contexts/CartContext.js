@@ -35,6 +35,7 @@ const CartContextProvider = props => {
 	const addToCart = (product, size, qty) => {
 		//e.preventDefault();
 		var val = uuid();
+
 		var item = product[val];
 
 		if (!item) {
@@ -65,9 +66,10 @@ const CartContextProvider = props => {
 		setCartProducts(result);
 	};
 
-	const removeItem = id => {
-		setCartProducts(cartProducts.filter(item => item.id !== id));
-		localStorage.removeItem(id);
+	const removeItem = prod => {
+		setCartItem(cartProducts.filter(item => item.id !== prod.id));
+		localStorage.setItem('cartProducts', JSON.stringify(cartItem));
+		return cartItem;
 
 		//Reset the totalPrice to reflect the new Price
 	};

@@ -22,7 +22,7 @@ const Cart = () => {
 		localStorage.setItem('cartProducts', JSON.stringify(cartItem));
 		//JSON.stringify() converts a Javascript object into a JSON string
 		getCartItems();
-		//esline-disable-next-line react-hook/exhaustive-deps
+		//eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [cartItem]);
 
 	return (
@@ -107,7 +107,7 @@ const Cart = () => {
 									<div className='col-3 text-right'>
 										<button
 											className='text-danger btn btn-warning'
-											onClick={() => removeItem(prod.id)}>
+											onClick={() => removeItem(prod)}>
 											{' '}
 											Remove Item{' '}
 										</button>
