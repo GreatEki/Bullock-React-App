@@ -69,9 +69,10 @@ const CartContextProvider = props => {
 	const removeItem = prod => {
 		setCartItem(cartProducts.filter(item => item.id !== prod.id));
 		localStorage.setItem('cartProducts', JSON.stringify(cartItem));
-		return cartItem;
 
 		//Reset the totalPrice to reflect the new Price
+		setTotalPrice(totalPrice => (totalPrice -= prod.price));
+		return cartItem;
 	};
 
 	return (
