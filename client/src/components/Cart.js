@@ -5,13 +5,9 @@ import { Link } from 'react-router-dom';
 import { CartContext } from '../contexts/CartContext';
 
 const Cart = () => {
-	const {
-		cartProducts,
-		getCartItems,
-		cartItem,
-		totalPrice,
-		removeItem
-	} = useContext(CartContext);
+	const { cartItem, getCartItems, totalPrice, removeItem } = useContext(
+		CartContext
+	);
 
 	//The method window.scrollTo() ensures that the rendered component loads from the top of the page.
 	useEffect(() => {
@@ -19,11 +15,10 @@ const Cart = () => {
 	}, []);
 
 	useEffect(() => {
-		localStorage.setItem('cartProducts', JSON.stringify(cartItem));
-		//JSON.stringify() converts a Javascript object into a JSON string
 		getCartItems();
+
 		//eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [cartItem]);
+	}, []);
 
 	return (
 		<main>
@@ -52,10 +47,11 @@ const Cart = () => {
 			<section className='container my-4'>
 				<h4 className='site-font-sm text-right'>
 					{' '}
-					You have {cartProducts.length} item in your cart{' '}
+					{cartItem.length <= 0 ? 0 : cartItem.length}
+					You have {cartItem.length} item in your cart{' '}
 				</h4>
-				{cartProducts.length > 0 ? (
-					cartProducts.map(prod => {
+				{cartItem.length > 0 ? (
+					cartItem.map(prod => {
 						return (
 							<div className='card m-0' key={prod.title}>
 								<div className='card-header row m-0'>

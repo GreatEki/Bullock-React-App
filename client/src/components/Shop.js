@@ -9,8 +9,12 @@ const Shop = () => {
 	const { products, retrieveProd } = useContext(ProductContext);
 
 	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
+	useEffect(() => {
 		retrieveProd();
-		 // eslint-disable-next-line react-hooks/exhaustive-deps
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return (
@@ -26,8 +30,7 @@ const Shop = () => {
 					<Link
 						to='/cart/overview'
 						className='active site-font
-						text-decoration-none'
-					>
+						text-decoration-none'>
 						{' '}
 						Shop
 					</Link>
@@ -58,8 +61,7 @@ const Shop = () => {
 									<Link
 										className='border buy-btn btn-sm btn-outline rounded text-center py-2 my-3 mx-3'
 										role='button'
-										to={`/product/${product._id}`}
-									>
+										to={`/product/${product._id}`}>
 										Buy
 									</Link>
 								</div>

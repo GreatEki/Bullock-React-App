@@ -8,17 +8,17 @@ const CartContextProvider = props => {
 	//This is the state we update when we call the addToCart() function
 	const [cartItem, setCartItem] = useState([]);
 
-	//This is the state that displays the products in the Cart Page
-	const [cartProducts, setCartProducts] = useState([], () => {
-		var localData = localStorage.getItem('cartProducts');
-		return localData ? JSON.parse(localData) : [];
-	});
-
 	//This reps our CartTotal Price
 	let [totalPrice, setTotalPrice] = useState(0);
 
 	//This reps the charge on delivery
 	const [deliveryRate, setDeliveryRate] = useState(1000);
+
+	//This watches our cartItem state and updates LocalStorage whenever a change occurs
+	useEffect(() => {
+		localStorage.setItem('cartProducts', JSON.stringify(cartItem));
+		localStorage.setItem('cartTotal', JSON.stringify(totalPrice));
+	}, [cartItem]);
 
 	const validate = (size, qty) => {
 		let errors = {};
@@ -53,25 +53,27 @@ const CartContextProvider = props => {
 		setTotalPrice(totalPrice => (totalPrice += item.price));
 		setCartItem(cartItem => [...cartItem, item]);
 
-		//localStorage.setItem('cartProducts', JSON.stringify(cartItem));
-
-		props.history.push('/cart/overview');
+		props.history.push('/shop');
 	};
 
 	//Function to retrieve products in the Cart Page
 	const getCartItems = () => {
-		var localData = localStorage.getItem('cartProducts');
-		var result = JSON.parse(localData);
+		var localCart = localStorage.getItem('cartProducts');
+		var localCartRs = JSON.parse(localCart);
 		//JSON.parse() converts a JSON string into a Javascript object
-		setCartProducts(result);
+		setCartItem(localCartRs);
+
+		var localTotal = localStorage.getItem('cartTotal');
+		var localTotalRs = JSON.parse(localTotal);
+		setTotalPrice(localTotalRs);
 	};
 
 	const removeItem = prod => {
-		setCartItem(cartProducts.filter(item => item.id !== prod.id));
+		setCartItem(cartItem.filter(item => item.id !== prod.id));
 		localStorage.setItem('cartProducts', JSON.stringify(cartItem));
-
 		//Reset the totalPrice to reflect the new Price
 		setTotalPrice(totalPrice => (totalPrice -= prod.price));
+		localStorage.setItem('cartTotal', JSON.stringify(totalPrice));
 		return cartItem;
 	};
 
@@ -79,7 +81,6 @@ const CartContextProvider = props => {
 		<CartContext.Provider
 			value={{
 				addToCart,
-				cartProducts,
 				getCartItems,
 				cartItem,
 				totalPrice,

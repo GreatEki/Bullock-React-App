@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { CartContext } from '../contexts/CartContext';
 const Checkout = () => {
 	let [grandTotal, setGrandTotal] = useState(0);
-	const { cartProducts, totalPrice, deliveryRate } = useContext(CartContext);
+	const { cartItem, totalPrice, deliveryRate } = useContext(CartContext);
 
 	useEffect(() => {
 		setGrandTotal(totalPrice + deliveryRate);
@@ -24,16 +24,14 @@ const Checkout = () => {
 					<Link
 						to='/cart/overview'
 						className='active site-font
-						text-decoration-none'
-					>
+						text-decoration-none'>
 						{' '}
 						Shop >
 					</Link>
 					<Link
 						to='/cart/checkout'
 						className='active site-font
-						text-decoration-none'
-					>
+						text-decoration-none'>
 						{' '}
 						CheckOut
 					</Link>
@@ -57,7 +55,7 @@ const Checkout = () => {
 						</div>
 
 						{/* Products details are listed here*/}
-						{cartProducts.map(product => {
+						{cartItem.map(product => {
 							return (
 								<div className='row px-4' key={product.id}>
 									<div className='col-8 mt-5'>
