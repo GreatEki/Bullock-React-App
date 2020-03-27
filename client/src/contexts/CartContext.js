@@ -18,7 +18,7 @@ const CartContextProvider = props => {
 	useEffect(() => {
 		localStorage.setItem('cartProducts', JSON.stringify(cartItem));
 		localStorage.setItem('cartTotal', JSON.stringify(totalPrice));
-	}, [cartItem]);
+	}, [cartItem, totalPrice]);
 
 	const validate = (size, qty) => {
 		let errors = {};

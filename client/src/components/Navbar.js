@@ -10,14 +10,13 @@ const Navbar = () => {
 						className='navbar-toggler'
 						type='button'
 						data-toggle='collapse'
-						data-target='#mainNavbar'
-					>
+						data-target='#mainNavbar'>
 						<span className='navbar-toggler-icon'> </span>
 					</button>
 
-					<a href='/' className='navbar-brand ml-lg-3'>
+					<Link to='/' className='navbar-brand ml-lg-3'>
 						<span> </span>
-					</a>
+					</Link>
 
 					<div className='collapse navbar-collapse'> </div>
 					<div className='collapse navbar-collapse' id='mainNavbar'>
@@ -46,25 +45,24 @@ const Navbar = () => {
 
 						<div className='collapse navbar-collapse'> </div>
 						<ul className='navbar-nav dropdown ml-lg-5'>
-							<a
-								href='/'
+							<Link
+								to='/'
 								className='nav-link dropdown-toggle'
 								id='navbarDropDown'
 								role='button'
 								data-toggle='dropdown'
 								aria-haspopup='true'
-								aria-expanded='false'
-							>
+								aria-expanded='false'>
 								<i className='fas fa-user'></i>
-							</a>
+							</Link>
 
 							<div className='dropdown-menu' aria-labelledby='navbarDropDown'>
-								<a href='/' className='dropdown-item site-font'>
+								<Link to='/users/signin' className='dropdown-item site-font'>
 									Sign-In
-								</a>
-								<a href='/' className='dropdown-item site-font'>
+								</Link>
+								<Link to='/users/signup' className='dropdown-item site-font'>
 									Sign-Up
-								</a>
+								</Link>
 							</div>
 						</ul>
 					</div>

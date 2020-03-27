@@ -46,9 +46,8 @@ const Cart = () => {
 
 			<section className='container my-4'>
 				<h4 className='site-font-sm text-right'>
-					{' '}
-					{cartItem.length <= 0 ? 0 : cartItem.length}
-					You have {cartItem.length} item in your cart{' '}
+					You have {cartItem.length <= 0 ? 0 : cartItem.length} item in your
+					cart
 				</h4>
 				{cartItem.length > 0 ? (
 					cartItem.map(prod => {
