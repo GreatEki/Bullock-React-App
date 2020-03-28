@@ -30,6 +30,7 @@ dbConnection();
 //Importing routes
 app.use('/api/product', require('./routes/api/product-controllers'));
 app.use('/api', require('./routes/api/nav-controllers'));
+app.use('/api/users', require('./routes/api/user'));
 
 //Seeding products to our database
 //Comment it out to prevent file function from running muitiple times to our database
