@@ -1,5 +1,7 @@
 const User = require('../models/user');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const jwtKey = require('../config/database').jwtKey;
 
 //REQUEST TYPE: POST
 //URL: '/api/users/signup'
@@ -40,6 +42,64 @@ exports.signup = async (req, res) => {
 		}
 	} catch (err) {
 		return res.status(500).json({
+			error: err.message
+		});
+	}
+};
+
+//REQUEST TYPE: GET
+//URL: '/api/users/signun
+//DESC' authenticates user anf signs user into profile page accounts
+exports.signin = async (req, res) => {
+	try {
+		const { email, password } = req.body;
+
+		//Convert email to Lowercase
+		email.toLowerCase();
+
+		//Check if email is valid
+		const user = await User.findOne({ email });
+
+		if (!user) {
+			return res.status(404).json({
+				success: false,
+				message: 'Authentication Failed'
+			});
+		} else {
+			//Validate Password
+			const valid = await bcrypt.compare(password, user.password);
+
+			if (!valid) {
+				return res.status(404).json({
+					success: false,
+					message: 'Authentication Failed'
+				});
+			} else {
+				//Generate token
+				//the  jwt.sgin() method, takes in three argument
+				//jwt.sign(payload, secretOrPrivateKey, [option, callback])
+
+				const token = await jwt.sign(
+					{ email: user.email, userId: user._id },
+					jwtKey,
+					{ expiresIn: '1h' }
+				);
+				return res.status(201).json({
+					success: true,
+					message: 'Authentication Successful',
+					user: {
+						_id: user._id,
+						firstname: user.firstname,
+						lastname: user.lastname,
+						email: user.email
+					},
+					token
+				});
+			}
+		}
+	} catch (err) {
+		return res.status(500).json({
+			success: false,
 			error: err.message
 		});
 	}
