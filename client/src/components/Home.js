@@ -10,7 +10,7 @@ import PercentDiscount from '../images/percentdiscount.jpg';
 import JakobOwens from '../images/jakob-owens.jpg';
 
 //Favourite Brands Imports
-import AddidasAllStar from "../images/addidas-allstar.jpg";
+import AddidasAllStar from '../images/addidas-allstar.jpg';
 import BlackAirforceOne from '../images/black-airforce-one.jpg';
 import NikeAirMaxWhiteBlack from '../images/nike-airmax-white-black.jpg';
 import NikeJoyride from '../images/nike-joyride.jpg';
@@ -60,14 +60,12 @@ const Home = () => {
 						<div
 							id='carouselSlide'
 							className='carousel slide'
-							data-ride='carousel'
-						>
+							data-ride='carousel'>
 							<ol className='carousel-indicators'>
 								<li
 									data-target='#carouselSlide'
 									data-slide-to='0'
-									className='active'
-								>
+									className='active'>
 									{' '}
 								</li>
 								<li data-target='#carouselSlide' data-slide-to='1'>
@@ -106,23 +104,19 @@ const Home = () => {
 								className='carousel-control-prev'
 								href='#carouselSlide'
 								role='button'
-								data-slide='prev'
-							>
+								data-slide='prev'>
 								<span
 									className='carousel-control-prev-icon'
-									aria-hidden='true'
-								></span>
+									aria-hidden='true'></span>
 							</a>
 							<a
 								className='carousel-control-next'
 								href='#carouselSlide'
 								role='button'
-								data-slide='next'
-							>
+								data-slide='next'>
 								<span
 									className='carousel-control-next-icon'
-									aria-hidden='true'
-								></span>
+									aria-hidden='true'></span>
 							</a>
 						</div>
 					</div>

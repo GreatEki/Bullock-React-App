@@ -11,6 +11,7 @@ import Contact from './components/Contact';
 import Search from './components/Search';
 import Cart from './components/Cart';
 import CartContextProvider from './contexts/CartContext';
+import UserContextProvider from './contexts/UserContext';
 import Checkout from './components/CheckOut';
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
@@ -20,16 +21,18 @@ function App() {
 			<BrowserRouter>
 				<Route exact path='/' component={Home} />
 				<ProductContextProvider>
-					<CartContextProvider>
-						<Route exact path='/shop' component={Shop} />
-						<Route exact path='/product/:id' component={Product} />
-						<Route path='/contact' component={Contact} />
-						<Route path='/product/search/:val' component={Search} />
-						<Route path='/cart/overview' component={Cart} />
-						<Route path='/cart/checkout' component={Checkout} />
-						<Route path='/users/signup' component={SignUp} />
-						<Route path='/users/signin' component={SignIn} />
-					</CartContextProvider>
+					<UserContextProvider>
+						<CartContextProvider>
+							<Route exact path='/shop' component={Shop} />
+							<Route exact path='/product/:id' component={Product} />
+							<Route path='/contact' component={Contact} />
+							<Route path='/product/search/:val' component={Search} />
+							<Route path='/cart/overview' component={Cart} />
+							<Route path='/cart/checkout' component={Checkout} />
+							<Route path='/users/signup' component={SignUp} />
+							<Route path='/users/signin' component={SignIn} />
+						</CartContextProvider>
+					</UserContextProvider>
 				</ProductContextProvider>
 			</BrowserRouter>
 		</div>

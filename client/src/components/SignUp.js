@@ -1,8 +1,27 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import Navbar from './Navbar';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../contexts/UserContext';
 
 const SignIn = () => {
+	const [firstname, setFirstname] = useState('');
+	const [lastname, setLastname] = useState('');
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+
+	const { signUpUser } = useContext(UserContext);
+
+	const handleSubmit = e => {
+		e.preventDefault();
+
+		const newUser = {
+			firstname,
+			lastname,
+			email,
+			password
+		};
+		signUpUser(newUser);
+	};
 	return (
 		<>
 			<Navbar />
@@ -29,39 +48,47 @@ const SignIn = () => {
 						<div className='col-lg-6 col-12 offset-lg-3'>
 							<h2 className='site-font text-center'> Registration </h2>
 
-							<form className='mt-5'>
+							<form className='mt-5' onSubmit={e => handleSubmit(e)}>
 								<div className='form-group'>
-									<label for='firstname'>FirstName</label>
+									<label htmlFor='firstname'>FirstName</label>
 									<input
 										type='text'
 										name='firstname'
+										onChange={e => setFirstname(e.target.value)}
+										value={firstname}
 										className='form-control rounded-0'
 									/>
 								</div>
 								<div className='form-group'>
-									<label for='lastname'> LastName </label>
+									<label htmlFor='lastname'> LastName </label>
 									<input
 										type='text'
 										className='form-control rounded-0'
+										onChange={e => setLastname(e.target.value)}
+										value={lastname}
 										name='lastname'
 									/>
 								</div>
 
 								<div className='form-group'>
-									<label for='email'> Email</label>
+									<label htmlFor='email'> Email</label>
 									<input
 										type='email'
 										className='form-control rounded-0'
+										onChange={e => setEmail(e.target.value)}
+										value={email}
 										name='email'
 									/>
 								</div>
 
 								<div className='form-group'>
-									<label for='pword'> Password</label>
+									<label htmlFor='pword'> Password</label>
 									<input
 										type='password'
 										className='form-control rounded-0'
-										name='pword'
+										onChange={e => setPassword(e.target.value)}
+										value={password}
+										name='password'
 									/>
 								</div>
 

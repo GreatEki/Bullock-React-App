@@ -1,7 +1,24 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
+import { UserContext } from '../contexts/UserContext';
 const SignIn = () => {
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+
+	const { signInUser } = useContext(UserContext);
+
+	//Function to handle submitting for authentication
+	const handleSubmit = e => {
+		e.preventDefault();
+
+		const user = {
+			email,
+			password
+		};
+
+		signInUser(user);
+	};
 	return (
 		<>
 			<Navbar />
@@ -28,22 +45,26 @@ const SignIn = () => {
 						<div className='col-lg-6 offset-lg-3'>
 							<h2 className='site-font text-center'> Login </h2>
 
-							<form className='mt-5'>
+							<form className='mt-5' onSubmit={e => handleSubmit(e)}>
 								<div className='form-group'>
-									<label for='email'> Email</label>
+									<label htmlFor='email'> Email</label>
 									<input
 										type='email'
 										className='form-control rounded-0'
+										onChange={e => setEmail(e.target.value)}
+										value={email}
 										name='email'
 									/>
 								</div>
 
 								<div className='form-group'>
-									<label for='pword'> Password</label>
+									<label htmlFor='password'> Password</label>
 									<input
 										type='password'
 										className='form-control rounded-0'
-										name='pword'
+										onChange={e => setPassword(e.target.value)}
+										value={password}
+										name='password'
 									/>
 								</div>
 
