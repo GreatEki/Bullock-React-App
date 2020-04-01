@@ -152,8 +152,6 @@ const Product = props => {
 				</div>
 			</div>
 
-			<HowToOrder />
-
 			<Footer />
 		</main>
 	);

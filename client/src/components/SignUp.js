@@ -9,7 +9,7 @@ const SignIn = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
-	const { signUpUser } = useContext(UserContext);
+	const { signUpUser, message } = useContext(UserContext);
 
 	const handleSubmit = e => {
 		e.preventDefault();
@@ -48,6 +48,14 @@ const SignIn = () => {
 						<div className='col-lg-6 col-12 offset-lg-3'>
 							<h2 className='site-font text-center'> Registration </h2>
 
+							{message ? (
+								<p className='alert alert-danger' role='alert'>
+									{' '}
+									{message}{' '}
+								</p>
+							) : (
+								<p> </p>
+							)}
 							<form className='mt-5' onSubmit={e => handleSubmit(e)}>
 								<div className='form-group'>
 									<label htmlFor='firstname'>FirstName</label>
@@ -57,6 +65,7 @@ const SignIn = () => {
 										onChange={e => setFirstname(e.target.value)}
 										value={firstname}
 										className='form-control rounded-0'
+										required
 									/>
 								</div>
 								<div className='form-group'>
@@ -66,7 +75,9 @@ const SignIn = () => {
 										className='form-control rounded-0'
 										onChange={e => setLastname(e.target.value)}
 										value={lastname}
+										className='form-control rounded-0'
 										name='lastname'
+										required
 									/>
 								</div>
 
@@ -78,6 +89,7 @@ const SignIn = () => {
 										onChange={e => setEmail(e.target.value)}
 										value={email}
 										name='email'
+										required
 									/>
 								</div>
 
@@ -89,6 +101,7 @@ const SignIn = () => {
 										onChange={e => setPassword(e.target.value)}
 										value={password}
 										name='password'
+										required
 									/>
 								</div>
 

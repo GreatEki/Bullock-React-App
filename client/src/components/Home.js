@@ -34,23 +34,6 @@ import Footer from './view-templates/Footer';
 const Home = () => {
 	return (
 		<div>
-			<div className='container mb-5'>
-				<header>
-					<div className='row'>
-						<div className='col-12 col-sm-4 col-lg-3 mx-xs-auto'>
-							<img src={BraveBull} alt='logo' className='logo' />
-						</div>
-
-						<div className='col-12 col-lg-8'>
-							<h1 className='lg-heading'>
-								Bullock <small> Leather Works</small>{' '}
-							</h1>
-							<h3 className='motto'>Exquisitely Unique!!!</h3>
-						</div>
-					</div>
-				</header>
-			</div>
-
 			<Navbar />
 
 			<div className='container-fluid mt-0 p-0'>

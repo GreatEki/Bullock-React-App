@@ -1,9 +1,11 @@
-import React, { createContext } from 'react';
+import React, { createContext, useState } from 'react';
 import axios from 'axios';
 
 export const UserContext = createContext();
 
 const UserContextProvider = props => {
+	const [message, setMessage] = useState('');
+
 	//This registers a new User
 	const signUpUser = async newUser => {
 		const config = {
@@ -19,8 +21,12 @@ const UserContextProvider = props => {
 				config
 			);
 
-			console.log(res);
-		} catch (err) {}
+			//console.log(res);
+			setMessage(res.data.message);
+		} catch (err) {
+			err.message = 'Registration Failed';
+			setMessage(err.message);
+		}
 	};
 
 	//Function to signIn user
@@ -37,13 +43,16 @@ const UserContextProvider = props => {
 				config
 			);
 
-			console.log(res);
+			//console.log(res);
+			setMessage(res.data.message);
 		} catch (err) {
-			console.log(err);
+			//console.log(err);
+			err.message = 'Invalid Email or Password';
+			setMessage(err.message);
 		}
 	};
 	return (
-		<UserContext.Provider value={{ signUpUser, signInUser }}>
+		<UserContext.Provider value={{ signUpUser, signInUser, message }}>
 			{props.children}
 		</UserContext.Provider>
 	);
