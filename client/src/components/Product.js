@@ -53,7 +53,7 @@ const Product = props => {
 	};
 
 	return (
-		<main>
+		<main className='prod-display'>
 			<Navbar />
 
 			<div className='container-fluid bg-container'>

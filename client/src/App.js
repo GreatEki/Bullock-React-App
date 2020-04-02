@@ -16,6 +16,7 @@ import Checkout from './components/CheckOut';
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 import HowToOrder from './components/view-templates/HowToOrder';
+import Dashboard from './components/user/Dashboard';
 function App() {
 	return (
 		<div className='App'>
@@ -33,6 +34,7 @@ function App() {
 							<Route path='/cart/checkout' component={Checkout} />
 							<Route path='/users/signup' component={SignUp} />
 							<Route path='/users/signin' component={SignIn} />
+							<Route path='/users/auth/dashboard' component={Dashboard} />
 						</CartContextProvider>
 					</UserContextProvider>
 				</ProductContextProvider>

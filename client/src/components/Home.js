@@ -29,12 +29,15 @@ import SoftLeather from '../images/soft-leather-wallet.jpg';
 import Laorentou from '../images/laorentou-wallet.jpg';
 import BisonDenim from '../images/bison-denim-wallet.jpg';
 
+import SearchTab from './view-templates/Searchtab';
+
 import Footer from './view-templates/Footer';
 
 const Home = () => {
 	return (
 		<div>
 			<Navbar />
+			<SearchTab />
 
 			<div className='container-fluid mt-0 p-0'>
 				<div className='row'>

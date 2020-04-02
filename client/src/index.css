@@ -50,7 +50,7 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	overflow-x: hidden;
 	background-color: var(--bg-color);
-	max-width: 100%;
+	min-width: 100%;
 }
 
 code {
@@ -149,6 +149,9 @@ img.card-img {
 }
 
 /* Shop Page Styling */
+.prod-display {
+	min-width: 100%;
+}
 
 .shop-pic {
 	width: 100%;

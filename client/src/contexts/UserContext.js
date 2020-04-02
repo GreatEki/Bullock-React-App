@@ -1,10 +1,12 @@
 import React, { createContext, useState } from 'react';
 import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 
 export const UserContext = createContext();
 
 const UserContextProvider = props => {
 	const [message, setMessage] = useState('');
+	const [token, setToken] = useState('');
 
 	//This registers a new User
 	const signUpUser = async newUser => {
@@ -43,11 +45,17 @@ const UserContextProvider = props => {
 				config
 			);
 
-			//console.log(res);
+			console.log(res);
 			setMessage(res.data.message);
+			setToken(res.data.token);
+
+			//Save Token in LocalStorage
+			localStorage.setItem('auth', JSON.stringify(res.data.token));
+
+			props.history.push('/users/auth/account');
 		} catch (err) {
 			//console.log(err);
-			err.message = 'Invalid Email or Password';
+			err.message = 'Invalid Credentials';
 			setMessage(err.message);
 		}
 	};
@@ -58,4 +66,4 @@ const UserContextProvider = props => {
 	);
 };
 
-export default UserContextProvider;
+export default withRouter(UserContextProvider);

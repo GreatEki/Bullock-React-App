@@ -46,7 +46,7 @@ const SignIn = () => {
 							<h2 className='site-font text-center'> Sign-In To Account </h2>
 
 							{message ? (
-								<div className='alert alert-danger' role='alert'>
+								<div className='text-danger text-center' role='alert'>
 									{' '}
 									{message}{' '}
 								</div>

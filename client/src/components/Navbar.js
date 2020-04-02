@@ -50,7 +50,7 @@ const Navbar = () => {
 								</Link>
 								<Link className='nav-item nav-link site-font' to='/'>
 									{' '}
-									Services
+									Account
 								</Link>
 								<Link className='nav-item nav-link site-font' to='/shop'>
 									{' '}
