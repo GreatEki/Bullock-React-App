@@ -1,10 +1,29 @@
 import React from 'react';
 import Navbar from './Navbar';
+import SearcTab from './view-templates/Searchtab';
+import { Link } from 'react-router-dom';
 
 const Contact = () => {
 	return (
 		<main>
 			<Navbar />
+			<SearcTab />
+
+			<section className='container-fluid bg-white'>
+				<div className='py-3'>
+					<Link to='/' className='site-font text-decoration-none'>
+						Home >{' '}
+					</Link>{' '}
+					<Link
+						to='/cart/overview'
+						className='active site-font
+						text-decoration-none'>
+						{' '}
+						Contact-Us
+					</Link>
+					<h1 className='site-font my-4'>Contact </h1>
+				</div>
+			</section>
 
 			<div class='container'>
 				<div class='title mt-4 mb-4'>---- Contact</div>

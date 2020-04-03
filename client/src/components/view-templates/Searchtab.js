@@ -9,7 +9,7 @@ const Searchtab = () => {
 	return (
 		<main>
 			{/* Search and Menu Tab */}
-			<nav className='nav justify-content-end bg-secondary container-fluid'>
+			<nav className='nav justify-content-end container-fluid'>
 				<form className='form-inline my-3 search-form'>
 					<input
 						className='form-control rounded-pill'

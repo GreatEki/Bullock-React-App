@@ -2,18 +2,37 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
 import Navbar from '../Navbar';
+import SearchTab from './Searchtab';
 
 const HowToOrder = () => {
 	return (
 		<>
 			<Navbar />
+			<SearchTab />
+
+			<section className='container-fluid bg-white'>
+				<div className='py-3'>
+					<Link to='/' className='site-font text-decoration-none'>
+						Home >{' '}
+					</Link>{' '}
+					<Link
+						to='/cart/overview'
+						className='active site-font
+						text-decoration-none'>
+						{' '}
+						How-to-order
+					</Link>
+					<h1 className='site-font my-4'>ORDER </h1>
+				</div>
+			</section>
+
 			<main className='container mt-5'>
 				<section>
 					<h1>HOW TO ORDER </h1>
 
 					<p className='site-font-lg'>
-						To order the above product, please select your shoe size from the
-						drop-down list above.{' '}
+						To order any product of your choice, please select your shoe size
+						from the drop-down list displayed to you after clicking buy button .{' '}
 					</p>
 
 					<p className='site-font-lg'>

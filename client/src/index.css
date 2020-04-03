@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Acme|Archivo+Narrow|Bangers|Anton|Dokdo|Lato|Pacifico|Allan');
 
 :root {
-	--bg-color: lightslategray;
+	--bg-color: whitesmoke;
 	--site-font: Archivo Narrow;
 	--site-text-color: rgb(43, 42, 42);
 	--bg-secondary-color: gold;
@@ -15,7 +15,7 @@
 
 .site-font-lg {
 	letter-spacing: 2px;
-	line-height: 2;
+	line-height: 2rem;
 	font-size: 18px;
 	font-family: var(--site-font);
 }
@@ -23,7 +23,7 @@
 .site-font-2 {
 	font-size: 18px;
 	letter-spacing: 2px;
-	line-height: 2;
+	line-height: 2rem;
 }
 
 .site-font-sm {
@@ -36,9 +36,8 @@
 	background-color: var(--bg-secondary-color);
 }
 
-.bg-secondary {
-	background-color: var(--bg-color) !important;
-	color: black;
+.bg-container {
+	background-color: var(--bgcolor);
 }
 
 body {
@@ -49,8 +48,8 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	overflow-x: hidden;
-	background-color: var(--bg-color);
 	min-width: 100%;
+	background-color: whitesmoke;
 }
 
 code {
