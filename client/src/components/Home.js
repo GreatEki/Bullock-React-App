@@ -35,7 +35,7 @@ import Footer from './view-templates/Footer';
 
 const Home = () => {
 	return (
-		<div>
+		<div className='wrapper'>
 			<Navbar />
 			<SearchTab />
 
@@ -65,14 +65,14 @@ const Home = () => {
 							<div className='carousel-inner'>
 								<div className='carousel-item active'>
 									<img
-										src={OpenShop}
+										src={'/webImage/bullock-logo.jpg'}
 										alt=''
 										className='d-block w-100 carousel-pics'
 									/>
 								</div>
 								<div className='carousel-item'>
 									<img
-										src={PercentDiscount}
+										src={OpenShop}
 										alt=''
 										className='d-block w-100 carousel-pics'
 									/>

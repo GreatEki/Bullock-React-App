@@ -52,21 +52,21 @@ const Footer = () => {
 			<div className='container'>
 				<section className='footer-section Contact-Us'>
 					<p className='text-center'>
-						<i class='fas fa-envelope'></i>{' '}
+						<i className='fas fa-envelope'></i>{' '}
 						<span className='site-font'> contact-us@bullock247.com</span>
 					</p>
 					<p className='text-center'>
-						<i class='fas fa-phone'></i>{' '}
+						<i className='fas fa-phone'></i>{' '}
 						<span className='site-font'> +234 (0)70 1222 9813</span>
 					</p>
 					<h4 className='mt-3 text-center'> Connect With US </h4>
 					<div className='d-flex flex-row justify-content-center'>
 						<a href='/' className='text-center mx-2 text-dark'>
-							<i class='fab fa-facebook fa-3x'></i>{' '}
+							<i className='fab fa-facebook fa-3x'></i>{' '}
 						</a>
 						<a href='/' className='text-center mx-2 text-dark'>
 							{' '}
-							<i class='fab fa-instagram fa-3x'></i>{' '}
+							<i className='fab fa-instagram fa-3x'></i>{' '}
 						</a>
 					</div>
 				</section>

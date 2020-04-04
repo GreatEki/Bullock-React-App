@@ -6,39 +6,23 @@ const Navbar = () => {
 	const { cartItem } = useContext(CartContext);
 	return (
 		<>
-			<div className='container mb-5'>
-				<header>
-					<div className='row'>
-						<div className='col-12 col-sm-4 col-lg-3 mx-xs-auto mt-4'>
-							<img
-								src={'/webImage/bullock-logo.jpg'}
-								alt='logo'
-								className='logo'
-							/>
-						</div>
+			<header className='container-fluid m-0 p-0'>
+				<h5 className='text-center header-text py-2'> Bullock-Leather-Works</h5>
+			</header>
 
-						<div className='col-12 col-lg-8'>
-							<h1 className='lg-heading'>
-								Bullock <small> Leather Works</small>{' '}
-							</h1>
-							<h3 className='motto'>Exquisitely Unique!!!</h3>
-						</div>
-					</div>
-				</header>
-			</div>
-			<div className='container-fluid mt-0 p-0'>
-				<nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
+			<div className='container-fluid m-0 p-0 bg-nav'>
+				<nav className='navbar navbar-expand-lg'>
 					<div className='container'>
 						<button
-							className='navbar-toggler'
+							className='navbar-toggler text-white'
 							type='button'
 							data-toggle='collapse'
 							data-target='#mainNavbar'>
-							<span className='navbar-toggler-icon'> </span>
+							<i className='navb-toggler-icon fas fa-bars'></i>
 						</button>
 
 						<Link to='/' className='navbar-brand ml-lg-3'>
-							<span> </span>
+							<span></span>
 						</Link>
 
 						<div className='collapse navbar-collapse'> </div>
@@ -48,10 +32,7 @@ const Navbar = () => {
 									{' '}
 									Home{' '}
 								</Link>
-								<Link className='nav-item nav-link site-font' to='/'>
-									{' '}
-									Account
-								</Link>
+
 								<Link className='nav-item nav-link site-font' to='/shop'>
 									{' '}
 									Shop
@@ -70,13 +51,16 @@ const Navbar = () => {
 
 							<div className='collapse navbar-collapse'> </div>
 							<div>
-								<Link to='/cart/overview' role='button' class='btn btn-info'>
+								<Link
+									to='/cart/overview'
+									role='button'
+									className='btn btn-info'>
 									<i className='fas fa-shopping-cart 5x text-white'></i>
 									<span className='site-font text-white'>
 										{' '}
 										Shopping Cart
 									</span>{' '}
-									<span class='badge badge-light'>{cartItem.length}</span>
+									<span className='badge badge-light'>{cartItem.length}</span>
 								</Link>
 							</div>
 							<ul className='navbar-nav dropdown ml-lg-5'>
@@ -88,7 +72,7 @@ const Navbar = () => {
 									data-toggle='dropdown'
 									aria-haspopup='true'
 									aria-expanded='false'>
-									<i className='fas fa-user'></i>
+									<i className='fas fa-user text-white'></i>
 								</Link>
 
 								<div className='dropdown-menu' aria-labelledby='navbarDropDown'>

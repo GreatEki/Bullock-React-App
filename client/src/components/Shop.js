@@ -38,7 +38,7 @@ const Shop = () => {
 				</div>
 			</section>
 
-			<main className='container'>
+			<main className='container wrapper'>
 				<div className='row gallery'>
 					{/* My Map method that loops through and return products listed in the database */}
 					{products.map(product => {

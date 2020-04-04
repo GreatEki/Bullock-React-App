@@ -92,7 +92,7 @@ const HowToOrder = () => {
 						</li>
 						<li className='site-font-2'>
 							Contact Information is available on our <span> </span>
-							<Link to='/contact' class='link'>
+							<Link to='/contact' className='link'>
 								Contact Page
 							</Link>
 						</li>

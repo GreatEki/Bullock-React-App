@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Contact = () => {
 	return (
-		<main>
+		<main className='wrapper'>
 			<Navbar />
 			<SearcTab />
 
@@ -25,19 +25,19 @@ const Contact = () => {
 				</div>
 			</section>
 
-			<div class='container'>
-				<div class='title mt-4 mb-4'>---- Contact</div>
+			<div className='container'>
+				<div className='title mt-4 mb-4'>---- Contact</div>
 			</div>
 
-			<div class='container mb-5'>
-				<p class='ml-md-5 font-weight-bold'>You can reach us via:</p>
-				<div class='row'>
-					<div class='col-md-8 offset-md-2 col-12'>
-						<div class='d-flex flex-column '>
-							<p class='address'>
+			<div className='container mb-5'>
+				<p className='ml-md-5 font-weight-bold'>You can reach us via:</p>
+				<div className='row'>
+					<div className='col-md-8 offset-md-2 col-12'>
+						<div className='d-flex flex-column '>
+							<p className='address'>
 								<span>Email: </span> bullockcoutoures@gmail.com
 							</p>
-							<p class='address'>
+							<p className='address'>
 								<span>Phone No: </span> +234 (0)70 1222 9813
 							</p>
 						</div>
@@ -45,9 +45,9 @@ const Contact = () => {
 				</div>
 			</div>
 
-			<div class='container'>
-				<p class='ml-md-5 font-weight-bold'>We are opened:</p>
-				<h2 class='days-open'>Mondays - Fridays (8:00am - 8:00pm)</h2>
+			<div className='container'>
+				<p className='ml-md-5 font-weight-bold'>We are opened:</p>
+				<h2 className='days-open'>Mondays - Fridays (8:00am - 8:00pm)</h2>
 			</div>
 		</main>
 	);
