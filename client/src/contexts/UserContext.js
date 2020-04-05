@@ -4,16 +4,17 @@ import { withRouter } from 'react-router-dom';
 
 export const UserContext = createContext();
 
-const UserContextProvider = props => {
+const UserContextProvider = (props) => {
 	const [message, setMessage] = useState('');
 	const [token, setToken] = useState('');
+	const [auth, setAuth] = useState(true);
 
 	//This registers a new User
-	const signUpUser = async newUser => {
+	const signUpUser = async (newUser) => {
 		const config = {
 			headers: {
-				'Content-Type': 'application/json'
-			}
+				'Content-Type': 'application/json',
+			},
 		};
 
 		try {
@@ -32,11 +33,11 @@ const UserContextProvider = props => {
 	};
 
 	//Function to signIn user
-	const signInUser = async user => {
+	const signInUser = async (user) => {
 		const config = {
 			headers: {
-				'Content-Type': 'application/json'
-			}
+				'Content-Type': 'application/json',
+			},
 		};
 		try {
 			const res = await axios.post(
@@ -60,7 +61,7 @@ const UserContextProvider = props => {
 		}
 	};
 	return (
-		<UserContext.Provider value={{ signUpUser, signInUser, message }}>
+		<UserContext.Provider value={{ signUpUser, signInUser, message, auth }}>
 			{props.children}
 		</UserContext.Provider>
 	);

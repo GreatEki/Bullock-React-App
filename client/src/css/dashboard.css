@@ -54,3 +54,7 @@
 	border: solid 1px var(--bg-color);
 }
 */
+.order-img {
+	width: 40px;
+	height: 40px;
+}

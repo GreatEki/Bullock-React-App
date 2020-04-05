@@ -67,6 +67,10 @@ code {
 .wrapper {
 	overflow-x: hidden;
 }
+
+.content-wrapper {
+	min-height: 200%;
+}
 header.container-fluid {
 	background-color: white;
 	float: left;

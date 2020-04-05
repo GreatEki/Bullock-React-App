@@ -2,7 +2,7 @@ import React from 'react';
 import Home from './components/Home';
 import {
 	BrowserRouter,
-	Route
+	Route,
 } from 'react-router-dom/cjs/react-router-dom.min';
 import Shop from './components/Shop';
 import ProductContextProvider from './contexts/ProductContext';
@@ -17,6 +17,8 @@ import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 import HowToOrder from './components/view-templates/HowToOrder';
 import Dashboard from './components/user/Dashboard';
+import PrivateRoute from './components/user/PrivateRoute';
+import context from './contexts/UserContext';
 function App() {
 	return (
 		<div className='App'>
@@ -34,7 +36,12 @@ function App() {
 							<Route path='/cart/checkout' component={Checkout} />
 							<Route path='/users/signup' component={SignUp} />
 							<Route path='/users/signin' component={SignIn} />
-							<Route path='/users/auth/dashboard' component={Dashboard} />
+							<PrivateRoute
+								exact
+								path='/users/auth/dashboard'
+								component={Dashboard}
+								auth={context.auth}
+							/>
 						</CartContextProvider>
 					</UserContextProvider>
 				</ProductContextProvider>

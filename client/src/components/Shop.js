@@ -18,7 +18,7 @@ const Shop = () => {
 	}, []);
 
 	return (
-		<div>
+		<div className='wrapper'>
 			<Navbar />
 			<Searchtab />
 
@@ -38,10 +38,10 @@ const Shop = () => {
 				</div>
 			</section>
 
-			<main className='container wrapper'>
+			<main className='container content-wrapper'>
 				<div className='row gallery'>
 					{/* My Map method that loops through and return products listed in the database */}
-					{products.map(product => {
+					{products.map((product) => {
 						return (
 							<div className='col-lg-3 col-12' key={product._id}>
 								<div className='prod-card card mt-5'>

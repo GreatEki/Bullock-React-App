@@ -7,7 +7,7 @@ import Footer from '../view-templates/Footer';
 
 const Dashboard = () => {
 	return (
-		<>
+		<div className='wrapper'>
 			<Navbar />
 			<SearchTab />
 			<section className='container-fluid bg-white p-2'>
@@ -25,7 +25,7 @@ const Dashboard = () => {
 				</div>
 			</section>
 
-			<main className='container-fluid mt-1 mx-lg-3 px-lg-5'>
+			<main className='container-fluid mt-1 mx-lg-3 px-lg-5 content-wrapper'>
 				<div className='row'>
 					<section className='col-lg-4 site-font mt-5'>
 						{/* Account Name Information Display */}
@@ -78,12 +78,16 @@ const Dashboard = () => {
 							<section className='card-body'>
 								<ul className='list-group list-group-flush'>
 									<li className='list-group-item'>
-										{' '}
-										List Group Item 1<span> </span>
+										<img
+											className='order-img'
+											src={'/products/addidas-allstar.jpg'}
+											alt='img-name'
+										/>
+										List Group Item 1 <small>(2) units </small>
+										<span className='text-right'>
+											<del className='del'>N</del>20, 000
+										</span>
 									</li>
-									<li className='list-group-item'> List Group Item 2</li>
-									<li className='list-group-item'> List Group Item 3</li>
-									<li className='list-group-item'> List Group Item 4</li>
 								</ul>
 							</section>
 
@@ -111,7 +115,7 @@ const Dashboard = () => {
 			</main>
 
 			<Footer />
-		</>
+		</div>
 	);
 };
 
