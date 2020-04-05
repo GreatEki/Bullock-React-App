@@ -1,13 +1,15 @@
 import React, { createContext, useState } from 'react';
 import axios from 'axios';
-import { withRouter } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 export const UserContext = createContext();
 
 const UserContextProvider = (props) => {
+	let history = useHistory();
 	const [message, setMessage] = useState('');
 	const [token, setToken] = useState('');
-	const [auth, setAuth] = useState(true);
+	const [auth, setAuth] = useState(false);
+	const [redirect, setRedirect] = useState(null);
 
 	//This registers a new User
 	const signUpUser = async (newUser) => {
@@ -47,24 +49,32 @@ const UserContextProvider = (props) => {
 			);
 
 			console.log(res);
-			setMessage(res.data.message);
+			//setMessage(res.data.message);
 			setToken(res.data.token);
 
 			//Save Token in LocalStorage
 			localStorage.setItem('auth', JSON.stringify(res.data.token));
-
-			props.history.push('/users/auth/account');
+			setAuth(true);
+			history.push('/users/auth/dashboard');
 		} catch (err) {
 			//console.log(err);
 			err.message = 'Invalid Credentials';
 			setMessage(err.message);
 		}
 	};
+
+	const logout = () => {
+		setToken('');
+		localStorage.removeItem('auth');
+		history.push('/users/signin');
+		window.location.reload(true);
+	};
 	return (
-		<UserContext.Provider value={{ signUpUser, signInUser, message, auth }}>
+		<UserContext.Provider
+			value={{ signUpUser, signInUser, message, auth, logout }}>
 			{props.children}
 		</UserContext.Provider>
 	);
 };
 
-export default withRouter(UserContextProvider);
+export default UserContextProvider;

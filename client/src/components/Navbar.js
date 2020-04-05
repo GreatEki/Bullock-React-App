@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../contexts/CartContext';
+import { UserContext } from '../contexts/UserContext';
 
 const Navbar = () => {
 	const { cartItem } = useContext(CartContext);
+	const { auth, logout } = useContext(UserContext);
 	return (
 		<>
 			<header className='container-fluid m-0 p-0'>
@@ -63,31 +65,43 @@ const Navbar = () => {
 									<span className='badge badge-light'>{cartItem.length}</span>
 								</Link>
 							</div>
-							<ul className='navbar-nav dropdown ml-lg-5'>
-								<Link
-									to='/'
-									className='nav-link dropdown-toggle'
-									id='navbarDropDown'
-									role='button'
-									data-toggle='dropdown'
-									aria-haspopup='true'
-									aria-expanded='false'>
-									<i className='fas fa-user text-white'></i>
-								</Link>
 
-								<div className='dropdown-menu' aria-labelledby='navbarDropDown'>
+							{!auth ? (
+								<ul className='navbar-nav dropdown ml-lg-5'>
 									<Link
-										to='/users/signin'
-										className='dropdown-item site-font-lg'>
-										Sign-In
+										to='/'
+										className='nav-link dropdown-toggle'
+										id='navbarDropDown'
+										role='button'
+										data-toggle='dropdown'
+										aria-haspopup='true'
+										aria-expanded='false'>
+										<i className='fas fa-user text-white'></i>
 									</Link>
-									<Link
-										to='/users/signup'
-										className='dropdown-item site-font-lg'>
-										Sign-Up
-									</Link>
-								</div>
-							</ul>
+
+									<div
+										className='dropdown-menu'
+										aria-labelledby='navbarDropDown'>
+										<Link
+											to='/users/signin'
+											className='dropdown-item site-font-lg'>
+											Sign-In
+										</Link>
+										<Link
+											to='/users/signup'
+											className='dropdown-item site-font-lg'>
+											Sign-Up
+										</Link>
+									</div>
+								</ul>
+							) : (
+								<button
+									onClick={() => logout()}
+									className='text-warning ml-3 p-2 text-white'>
+									{' '}
+									Logout{' '}
+								</button>
+							)}
 						</div>
 					</div>
 				</nav>
