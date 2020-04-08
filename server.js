@@ -16,7 +16,7 @@ const dbConnection = async () => {
 	try {
 		await mongoose.connect(db, {
 			useNewUrlParser: true,
-			useUnifiedTopology: true
+			useUnifiedTopology: true,
 		});
 
 		console.log('Database Connected Successfully.....');
@@ -31,7 +31,7 @@ dbConnection();
 app.use('/api/product', require('./routes/api/product-controllers'));
 app.use('/api', require('./routes/api/nav-controllers'));
 app.use('/api/users', require('./routes/api/user'));
-
+app.use('/api/orders', require('./routes/orders'));
 //Seeding products to our database
 //Comment it out to prevent file function from running muitiple times to our database
 //var productSeeder = require('./seeder/product-seeder');
