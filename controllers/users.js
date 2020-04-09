@@ -16,7 +16,7 @@ exports.signup = async (req, res) => {
 		if (user.length > 0) {
 			return res.status(409).json({
 				success: false,
-				message: 'Authentication failed'
+				message: 'Authentication failed',
 			});
 		} else {
 			//Create new user and Hash password
@@ -24,7 +24,7 @@ exports.signup = async (req, res) => {
 				firstname,
 				lastname,
 				email,
-				password
+				password,
 			});
 
 			const hash = await bcrypt.hash(password, 10);
@@ -37,12 +37,12 @@ exports.signup = async (req, res) => {
 			return res.status(201).json({
 				success: true,
 				message: 'New User Created Successfully',
-				user: savedUser
+				user: savedUser,
 			});
 		}
 	} catch (err) {
 		return res.status(500).json({
-			error: err.message
+			error: err.message,
 		});
 	}
 };
@@ -63,7 +63,7 @@ exports.signin = async (req, res) => {
 		if (!user) {
 			return res.status(404).json({
 				success: false,
-				message: 'Authentication Failed'
+				message: 'Authentication Failed',
 			});
 		} else {
 			//Validate Password
@@ -72,7 +72,7 @@ exports.signin = async (req, res) => {
 			if (!valid) {
 				return res.status(404).json({
 					success: false,
-					message: 'Authentication Failed'
+					message: 'Authentication Failed',
 				});
 			} else {
 				//Generate token
@@ -87,20 +87,15 @@ exports.signin = async (req, res) => {
 				return res.status(201).json({
 					success: true,
 					message: 'Authentication Successful',
-					user: {
-						_id: user._id,
-						firstname: user.firstname,
-						lastname: user.lastname,
-						email: user.email
-					},
-					token
+					user,
+					token,
 				});
 			}
 		}
 	} catch (err) {
 		return res.status(500).json({
 			success: false,
-			error: err.message
+			error: err.message,
 		});
 	}
 };

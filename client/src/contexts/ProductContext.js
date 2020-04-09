@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const ProductContext = createContext();
 
-const ProductContextProvider = props => {
+const ProductContextProvider = (props) => {
 	const [products, setProducts] = useState([]);
 	const [product, setProduct] = useState([]);
 	const [searchProd, setSearchProd] = useState([]);
@@ -21,17 +21,17 @@ const ProductContextProvider = props => {
 		}
 	};
 
-	const getProd = async id => {
+	const getProd = async (id) => {
 		try {
 			const res = await axios.get(`http://localhost:8080/api/product/${id}`);
 
 			setProduct(res.data);
 		} catch (err) {
-			//console.log(err);
+			console.log(err);
 		}
 	};
 
-	const handleSearch = async val => {
+	const handleSearch = async (val) => {
 		try {
 			const res = await axios.get(
 				`http://localhost:8080/api/product/search/${val}`
@@ -55,7 +55,7 @@ const ProductContextProvider = props => {
 				retrieveProd,
 				searchProd,
 				handleSearch,
-				hasLoaded
+				hasLoaded,
 			}}>
 			{props.children}
 		</ProductContext.Provider>

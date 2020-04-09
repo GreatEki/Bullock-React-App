@@ -41,7 +41,7 @@ const Cart = () => {
 			</section>
 
 			<Link className='btn btn-outline-warning ml-5 my-3' to='/shop'>
-				<i class='fas fa-long-arrow-alt-left'></i> Continue Shopping
+				<i className='fas fa-long-arrow-alt-left'></i> Continue Shopping
 			</Link>
 
 			<section className='container my-4'>
@@ -50,7 +50,7 @@ const Cart = () => {
 					cart
 				</h4>
 				{cartItem.length > 0 ? (
-					cartItem.map(prod => {
+					cartItem.map((prod) => {
 						return (
 							<div className='card m-0' key={prod.title}>
 								<div className='card-header row m-0'>
@@ -129,7 +129,7 @@ const Cart = () => {
 					<Link
 						className='btn btn-outline-warning ml-5 my-3'
 						to='/cart/checkout'>
-						<i class='fas fa-long-arrow-alt-right'></i> Proceed TO CheckOut
+						<i className='fas fa-long-arrow-alt-right'></i> Proceed TO CheckOut
 					</Link>
 				</div>
 			</section>

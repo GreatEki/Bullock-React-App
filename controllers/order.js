@@ -8,6 +8,7 @@ exports.placeOrder = async (req, res) => {
 		const {
 			userId,
 			products,
+			orderTotal,
 			paymentChoice,
 			paymentStatus,
 			deliveryStatus,
@@ -16,6 +17,7 @@ exports.placeOrder = async (req, res) => {
 		const newOrder = new Order({
 			userId,
 			products,
+			orderTotal,
 			paymentChoice,
 			paymentStatus,
 			deliveryStatus,
@@ -32,6 +34,7 @@ exports.placeOrder = async (req, res) => {
 				paymentStatus: savedOrder.paymentStatus,
 				deliveryStatus: savedOrder.deliveryStatus,
 				products: savedOrder.products,
+				orderTotal: savedOrder.orderTotal,
 			},
 		});
 	} catch (err) {
@@ -61,6 +64,7 @@ exports.getAllOrders = (req, res) => {
 						paymentStatus: order.paymentStatus,
 						deliveryStatus: order.deliveryStatus,
 						products: order.products,
+						orderTotal: order.orderTotal,
 					};
 				}),
 			});
@@ -94,6 +98,7 @@ exports.getOrdersByUser = async (req, res) => {
 					paymentChoice: order.paymentChoice,
 					paymentStatus: order.paymentStatus,
 					deliveryStatus: order.deliveryStatus,
+					orderTotal: order.orderTotal,
 				};
 			}),
 		});

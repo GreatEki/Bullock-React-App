@@ -9,7 +9,7 @@ const UserContextProvider = (props) => {
 	const [message, setMessage] = useState('');
 	const [token, setToken] = useState('');
 	const [auth, setAuth] = useState(false);
-	const [redirect, setRedirect] = useState(null);
+	const [user, setUser] = useState({});
 
 	//This registers a new User
 	const signUpUser = async (newUser) => {
@@ -49,7 +49,12 @@ const UserContextProvider = (props) => {
 			);
 
 			console.log(res);
-			//setMessage(res.data.message);
+			setUser({
+				id: res.data.user._id,
+				firstname: res.data.user.firstname,
+				lastname: res.data.user.lastname,
+				email: res.data.user.email,
+			});
 			setToken(res.data.token);
 
 			//Save Token in LocalStorage
@@ -71,7 +76,7 @@ const UserContextProvider = (props) => {
 	};
 	return (
 		<UserContext.Provider
-			value={{ signUpUser, signInUser, message, auth, logout }}>
+			value={{ signUpUser, signInUser, message, auth, logout, user }}>
 			{props.children}
 		</UserContext.Provider>
 	);

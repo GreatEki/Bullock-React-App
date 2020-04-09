@@ -2,11 +2,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import Navbar from './Navbar';
 import { ProductContext } from '../contexts/ProductContext';
 import { Link } from 'react-router-dom';
-import HowToOrder from './view-templates/HowToOrder';
+//import HowToOrder from './view-templates/HowToOrder';
 import Footer from './view-templates/Footer';
 import { CartContext } from '../contexts/CartContext';
 
-const Product = props => {
+const Product = (props) => {
 	var id = props.match.params.id;
 	//console.log(id);
 	const { getProd, product } = useContext(ProductContext);
@@ -44,7 +44,7 @@ const Product = props => {
 	}, [errors]);
 
 	//This methods handles the onClick() event in our Product.js Component
-	const handleProdFormSubmit = e => {
+	const handleProdFormSubmit = (e) => {
 		e.preventDefault();
 		const validationErrors = validate(size, qty);
 		setErrors(validationErrors);
@@ -95,12 +95,12 @@ const Product = props => {
 						</p>
 
 						{/* Form Page */}
-						<form onSubmit={e => handleProdFormSubmit(e)}>
+						<form onSubmit={(e) => handleProdFormSubmit(e)}>
 							<h3 className='site-font'> Select your size </h3>
 							<div className='form-group site-font'>
 								<select
 									className={errors.qty && 'errors-input form-control'}
-									onChange={e => setSize(e.target.value)}
+									onChange={(e) => setSize(e.target.value)}
 									value={size}>
 									<optgroup label='Available Wallet Sizes'>
 										<option value='null'> nil </option>
@@ -135,7 +135,7 @@ const Product = props => {
 								<input
 									type='text'
 									className={`form control mb-5 ${errors.qty} && error-input`}
-									onChange={e => setQty(parseInt(e.target.value))}
+									onChange={(e) => setQty(parseInt(e.target.value))}
 									value={qty}
 								/>
 								{errors.qty && <p className='text-danger'> {errors.qty} </p>}
