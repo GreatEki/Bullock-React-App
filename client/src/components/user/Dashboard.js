@@ -54,19 +54,19 @@ const Dashboard = () => {
 							</div>
 							<div className='p-2 bd-highlight text-wrap profile-list'>
 								{' '}
-								<Link>Update Profile Information</Link>
+								<Link to='/'>Update Profile Information</Link>
 							</div>
 							<div className='p-2 bd-highlight profile-list'>
 								{' '}
-								<Link>Delivery Address </Link>
+								<Link to='/'>Delivery Address </Link>
 							</div>
 							<div className='p-2 bd-highlight profile-list'>
 								{' '}
-								<Link>Tickets </Link>
+								<Link to='/'>Tickets </Link>
 							</div>
 							<div className='p-2 bd-highlight profile-list'>
 								{' '}
-								<Link>Settings</Link>
+								<Link to='/'>Settings</Link>
 							</div>
 						</div>
 					</section>
@@ -75,7 +75,7 @@ const Dashboard = () => {
 						{orders ? (
 							orders.map((order) => {
 								return (
-									<div className='card'>
+									<div className='card' key='order._id'>
 										<section className='row card-header m-0'>
 											<div className='col-6'>
 												<p className='text-dark ml-2 p-2 site-font'>
@@ -102,7 +102,7 @@ const Dashboard = () => {
 												<li className='list-group-item'>
 													<img
 														className='order-img'
-														src={`/products/${order.imagepath}`}
+														src={`/products/${order.imagePath}`}
 														alt='img-name'
 													/>
 													List Group Item 1 <small>(2) units </small>

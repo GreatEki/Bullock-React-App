@@ -35,6 +35,17 @@ const Navbar = () => {
 									Home{' '}
 								</Link>
 
+								{auth ? (
+									<Link
+										className='nav-item nav-link site-font'
+										to='/users/auth/dashboard'>
+										{' '}
+										Dashboard{' '}
+									</Link>
+								) : (
+									<p></p>
+								)}
+
 								<Link className='nav-item nav-link site-font' to='/shop'>
 									{' '}
 									Shop

@@ -49,7 +49,7 @@ const Checkout = () => {
 			{/* Checkout Form Page */}
 			<main className='container my-5'>
 				{msg ? (
-					<div className='alert alert-danger text-center' role='alert'>
+					<div className='alert alert-success text-center' role='alert'>
 						{' '}
 						{msg}
 					</div>
