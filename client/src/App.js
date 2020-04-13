@@ -12,7 +12,7 @@ import Search from './components/Search';
 import Cart from './components/Cart';
 import CartContextProvider from './contexts/CartContext';
 import UserContextProvider from './contexts/UserContext';
-import Checkout from './components/CheckOut';
+import CheckOut from './components/CheckOut';
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 import HowToOrder from './components/view-templates/HowToOrder';
@@ -35,13 +35,19 @@ function App() {
 								<Route path='/contact' component={Contact} />
 								<Route path='/product/search/:val' component={Search} />
 								<Route path='/cart/overview' component={Cart} />
-								<Route path='/cart/checkout' component={Checkout} />
 								<Route path='/users/signup' component={SignUp} />
 								<Route path='/users/signin' component={SignIn} />
 								<PrivateRoute
 									exact
 									path='/users/auth/dashboard'
 									component={Dashboard}
+									auth={context.auth}
+								/>
+
+								<PrivateRoute
+									exact
+									path='/cart/checkout'
+									component={CheckOut}
 									auth={context.auth}
 								/>
 							</OrderContext>

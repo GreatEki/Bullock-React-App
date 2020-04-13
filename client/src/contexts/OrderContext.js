@@ -34,6 +34,10 @@ const OrderContextProvider = (props) => {
 		placeOrder(order);
 		localStorage.setItem('cartProducts', JSON.stringify([]));
 		localStorage.setItem('cartTotal', JSON.stringify(0));
+
+		const timer = setTimeout(() => {
+			setMsg('');
+		}, 3000);
 	};
 
 	//This placeOrder() is used in our CheckOut.js Component to place orders
