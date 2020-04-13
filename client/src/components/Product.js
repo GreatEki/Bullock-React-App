@@ -10,13 +10,10 @@ const Product = (props) => {
 	var id = props.match.params.id;
 	//console.log(id);
 	const { getProd, product } = useContext(ProductContext);
-	const { addToCart, validate } = useContext(CartContext);
+	const { addToCart } = useContext(CartContext);
 
 	const [size, setSize] = useState('');
 	const [qty, setQty] = useState(1);
-
-	const [errors, setErrors] = useState({});
-	const [isSubmitting, setSubmitting] = useState(false);
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -28,27 +25,9 @@ const Product = (props) => {
 		//eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [id]);
 
-	//This watches the errors state when validating product form
-	useEffect(() => {
-		if (isSubmitting) {
-			const noErrors = Object.keys(errors).length === 0;
-			if (noErrors) {
-				console.log('validation successful');
-				setSubmitting(false);
-			}
-		} else {
-			setSubmitting(false);
-		}
-
-		//eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [errors]);
-
 	//This methods handles the onClick() event in our Product.js Component
 	const handleProdFormSubmit = (e) => {
 		e.preventDefault();
-		const validationErrors = validate(size, qty);
-		setErrors(validationErrors);
-		setSubmitting(true);
 		addToCart(product, size, qty);
 	};
 
@@ -99,11 +78,11 @@ const Product = (props) => {
 							<h3 className='site-font'> Select your size </h3>
 							<div className='form-group site-font'>
 								<select
-									className={errors.qty && 'errors-input form-control'}
+									className='form-control'
 									onChange={(e) => setSize(e.target.value)}
 									value={size}>
-									<optgroup label='Available Wallet Sizes'>
-										<option value='null'> nil </option>
+									<optgroup label='Select option N/A for wallet and watch'>
+										<option value=''> nil</option>
 										<option value='not_available'> N/A </option>
 									</optgroup>
 									<optgroup label='Available Shoe Sizes'>
@@ -126,24 +105,19 @@ const Product = (props) => {
 										<option value='size_48'>Size 48</option>
 									</optgroup>
 								</select>
-								{errors.size && <p className='text-danger'> {errors.qty} </p>}
-							</div>
 
-							<div>
 								<p> Enter the quantity you wish to purchase below: </p>
 
 								<input
 									type='text'
-									className={`form control mb-5 ${errors.qty} && error-input`}
+									className='form-control mb-5'
 									onChange={(e) => setQty(parseInt(e.target.value))}
 									value={qty}
 								/>
-								{errors.qty && <p className='text-danger'> {errors.qty} </p>}
 
 								<button
 									className='btn buy-btn btn-block rounded btn-md btn-warning'
-									type='submit'
-									disabled={isSubmitting}>
+									type='submit'>
 									Add To Cart
 								</button>
 							</div>

@@ -16,6 +16,7 @@ const OrderContextProvider = (props) => {
 		return paymentChoice;
 	};
 
+	//This is the fucntion that handles the submit button for placing an order and calls the placeOrder() function
 	const handleSubmitOrder = (e, userId, product, grandTotal) => {
 		e.preventDefault();
 		const paymentStatus = 'unconfirmed';
@@ -31,6 +32,8 @@ const OrderContextProvider = (props) => {
 		};
 
 		placeOrder(order);
+		localStorage.setItem('cartProducts', JSON.stringify([]));
+		localStorage.setItem('cartTotal', JSON.stringify(0));
 	};
 
 	//This placeOrder() is used in our CheckOut.js Component to place orders

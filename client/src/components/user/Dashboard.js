@@ -75,7 +75,7 @@ const Dashboard = () => {
 						{orders ? (
 							orders.map((order) => {
 								return (
-									<div className='card' key='order._id'>
+									<div className='card my-3' key='order._id'>
 										<section className='row card-header m-0'>
 											<div className='col-6'>
 												<p className='text-dark ml-2 p-2 site-font'>
@@ -91,7 +91,7 @@ const Dashboard = () => {
 													{' '}
 													Delivery Status:{' '}
 													<span className='site-font text-success'>
-														Delivered
+														{order.deliveryStatus}
 													</span>
 												</p>{' '}
 											</div>
@@ -99,18 +99,22 @@ const Dashboard = () => {
 										</section>
 										<section className='card-body'>
 											<ul className='list-group list-group-flush'>
-												<li className='list-group-item'>
-													<img
-														className='order-img'
-														src={`/products/${order.imagePath}`}
-														alt='img-name'
-													/>
-													List Group Item 1 <small>(2) units </small>
-													<span className='text-right'>
-														<del className='del'>N</del>
-														{order.price}
-													</span>
-												</li>
+												{order.products.map((item) => {
+													return (
+														<li className='list-group-item'>
+															<img
+																className='order-img'
+																src={`/products/${item.imagePath}`}
+																alt='img-name'
+															/>
+															{item.title} <small>{item.size} </small>
+															<span className='text-right'>
+																<del className='del'>N</del>
+																{item.price}
+															</span>
+														</li>
+													);
+												})}
 											</ul>
 										</section>
 
@@ -120,14 +124,15 @@ const Dashboard = () => {
 													<h5 className='ml-2 p-2'>
 														Order Total:
 														<span>
-															<del className='del'>N</del>40, 000
+															<del className='del'>N</del>
+															{order.orderTotal}
 														</span>
 													</h5>
 												</div>
 
 												<div className='col-6'>
 													<p className='text-right ml-2 p-2 text-success'>
-														Cash On Delivery
+														{order.paymentChoice}
 													</p>
 												</div>
 											</div>

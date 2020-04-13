@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 export const CartContext = createContext();
 
-const CartContextProvider = props => {
+const CartContextProvider = (props) => {
 	//This is the state we update when we call the addToCart() function
 	const [cartItem, setCartItem] = useState([]);
 
@@ -20,20 +20,7 @@ const CartContextProvider = props => {
 		localStorage.setItem('cartTotal', JSON.stringify(totalPrice));
 	}, [cartItem, totalPrice]);
 
-	const validate = (size, qty) => {
-		let errors = {};
-		if (!size || size === 'nil') {
-			errors.size = 'Choose your size appropriately';
-		}
-		if (!qty || qty === 0) {
-			errors.qty = 'Enter the quantity you wish to puchase';
-		}
-
-		return errors;
-	};
-
 	const addToCart = (product, size, qty) => {
-		//e.preventDefault();
 		var val = uuid();
 
 		var item = product[val];
@@ -46,12 +33,12 @@ const CartContextProvider = props => {
 				size: size,
 				qty: qty,
 
-				price: product.price * qty
+				price: product.price * qty,
 			};
 		}
 
-		setTotalPrice(totalPrice => (totalPrice += item.price));
-		setCartItem(cartItem => [...cartItem, item]);
+		setTotalPrice((totalPrice) => (totalPrice += item.price));
+		setCartItem((cartItem) => [...cartItem, item]);
 
 		props.history.push('/shop');
 	};
@@ -68,11 +55,11 @@ const CartContextProvider = props => {
 		setTotalPrice(localTotalRs);
 	};
 
-	const removeItem = prod => {
-		setCartItem(cartItem.filter(item => item.id !== prod.id));
+	const removeItem = (prod) => {
+		setCartItem(cartItem.filter((item) => item.id !== prod.id));
 		localStorage.setItem('cartProducts', JSON.stringify(cartItem));
 		//Reset the totalPrice to reflect the new Price
-		setTotalPrice(totalPrice => (totalPrice -= prod.price));
+		setTotalPrice((totalPrice) => (totalPrice -= prod.price));
 		localStorage.setItem('cartTotal', JSON.stringify(totalPrice));
 		return cartItem;
 	};
@@ -84,9 +71,8 @@ const CartContextProvider = props => {
 				getCartItems,
 				cartItem,
 				totalPrice,
-				validate,
 				deliveryRate,
-				removeItem
+				removeItem,
 			}}>
 			{props.children}
 		</CartContext.Provider>
