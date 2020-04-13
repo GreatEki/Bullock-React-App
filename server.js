@@ -28,7 +28,7 @@ const dbConnection = async () => {
 dbConnection();
 
 //Importing routes
-app.use('/api/product', require('./routes/api/product-controllers'));
+app.use('/api/product', require('./routes/api/productRoutes'));
 app.use('/api', require('./routes/api/nav-controllers'));
 app.use('/api/users', require('./routes/api/user'));
 app.use('/api/orders', require('./routes/orders'));
