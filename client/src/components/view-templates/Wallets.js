@@ -10,7 +10,7 @@ const Wallets = () => {
 	}, []);
 	return (
 		<>
-			<div className='container'>
+			<div className='container my-5'>
 				<div className='row'>
 					{wallets.map((prod) => {
 						return (

@@ -10,8 +10,8 @@ const Shoes = () => {
 	}, []);
 	return (
 		<>
-			<div className='container'>
-				<div className='row'>
+			<div className='container my-5'>
+				<div className='row my-2'>
 					{shoes.map((prod) => {
 						return (
 							<Link
