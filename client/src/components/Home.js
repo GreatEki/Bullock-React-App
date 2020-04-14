@@ -14,19 +14,11 @@ import Nike from './view-templates/Nike';
 import Addidas from './view-templates/Addidas';
 import Reebook from './view-templates/Reebook';
 import Erke from './view-templates/Erke';
+import Shoes from './view-templates/Shoes';
+import Wallets from './view-templates/Wallets';
 
 //Import WatchSlider Template
 import WatchSlider from './view-templates/WatchSlider';
-
-//Shoes Import
-import MensFormal3 from '../images/mens-formal-shoe-3.jpg';
-import MensGrimmetrin from '../images/mens-grimettrin-italian.jpg';
-import MensThombsBrown from '../images/mens-thombs-brown.jpg';
-
-//import for Wallets
-import SoftLeather from '../images/soft-leather-wallet.jpg';
-import Laorentou from '../images/laorentou-wallet.jpg';
-import BisonDenim from '../images/bison-denim-wallet.jpg';
 
 import SearchTab from './view-templates/Searchtab';
 
@@ -131,6 +123,7 @@ const Home = () => {
 			</div>
 
 			{/*Sneaker Shoe Brands Display*/}
+
 			<Nike />
 
 			<Addidas />
@@ -158,75 +151,11 @@ const Home = () => {
 				</div>
 				<hr />
 			</div>
-			<div className='container'>
-				<div className='row'>
-					<div className='col-lg-4'>
-						<div className='row no-gutters'>
-							<div className='col-6'>
-								<img src={MensFormal3} className='card-img p-0' alt=' ' />
-							</div>
-							<div className='col-6'>
-								<div className='card-body'>
-									<h5 className='card-title text-center site-font'>
-										Mens Formal Shoe
-									</h5>
-									<p className='card-text text-center site-font'>
-										<del className='del'>N</del> 25, 000
-									</p>
-									<p className='card-text text-center site-font'>
-										{' '}
-										SIZE: <small>40 - 44</small>
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
 
-					<div className='col-lg-4'>
-						<div className='row no-gutters'>
-							<div className='col-6'>
-								<img src={MensGrimmetrin} className='card-img p-0' alt=' ' />
-							</div>
-							<div className='col-6'>
-								<div className='card-body'>
-									<h5 className='card-title text-center site-font'>
-										Grimettin Italian Men
-									</h5>
-									<p className='card-text text-center site-font'>
-										<del className='del'>N</del> 35, 000
-									</p>
-									<p className='card-text text-center site-font'>
-										{' '}
-										SIZE: <small>40 - 44</small>
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
+			{/*Shoe Section display*/}
+			<Shoes />
 
-					<div className='col-lg-4'>
-						<div className='row no-gutters'>
-							<div className='col-6'>
-								<img src={MensThombsBrown} className='card-img p-0' alt=' ' />
-							</div>
-							<div className='col-6'>
-								<div className='card-body'>
-									<h5 className='card-title text-center site-font'>
-										Mens Thombs Shoe
-									</h5>
-									<p className='card-text text-center site-font'>
-										<del className='del'>N </del>35, 000
-									</p>
-									<p className='card-text text-center site-font'>
-										{' '}
-										SIZE: <small>40 - 44</small>
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			{/*End of Shoe Section display*/}
 
 			{/* Wallet Section*/}
 			<div className='container-fluid my-3'>
@@ -235,62 +164,9 @@ const Home = () => {
 				</div>
 				<hr />
 			</div>
-			<div className='container'>
-				<div className='row'>
-					<div className='col-lg-4'>
-						<div className='row no-gutters'>
-							<div className='col-6'>
-								<img
-									src={SoftLeather}
-									alt='Wallet-1'
-									className='card-img p-0'
-								/>
-							</div>
-							<div className='col-6'>
-								<h5 className=' card-title text-center site-font mt-5'>
-									Soft Leather Wallet
-								</h5>
-								<p className='card-text text-center site -font'>
-									<del>N</del> 3, 000{' '}
-								</p>
-							</div>
-						</div>
-					</div>
 
-					<div className='col-lg-4'>
-						<div className='row no-gutters'>
-							<div className='col-6'>
-								<img src={Laorentou} alt='Wallet-2' className='card-img p-0' />
-							</div>
-							<div className='col-6'>
-								<h5 className=' card-title text-center site-font'>
-									Laorentou{' '}
-								</h5>
-								<p className='card-text text-center site -font'>
-									<del>N</del> 4, 000{' '}
-								</p>
-							</div>
-						</div>
-					</div>
-
-					<div className='col-lg-4'>
-						<div className='row no-gutters'>
-							<div className='col-6'>
-								<img src={BisonDenim} alt='Wallet-2' className='card-img p-0' />
-							</div>
-							<div className='col-6'>
-								<h5 className=' card-title text-center site-font'>
-									{' '}
-									Bison Denim{' '}
-								</h5>
-								<p className='card-text text-center site -font'>
-									<del>N</del> 4, 000{' '}
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			<Wallets />
+			{/*End of Wallet Section*/}
 
 			<Footer />
 		</div>

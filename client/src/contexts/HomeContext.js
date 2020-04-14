@@ -103,7 +103,7 @@ const HomeContextProvider = (props) => {
 		try {
 			const res = await axios.get('http://localhost:8080/api/product/shoes');
 
-			setShoes(res.data.wallets);
+			setShoes(res.data.shoes);
 			setIsLoading(true);
 		} catch (err) {
 			err.message = 'REQUEST NOT SENT';

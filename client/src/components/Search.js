@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { ProductContext } from '../contexts/ProductContext';
 import Searchtab from './view-templates/Searchtab';
 
-const Search = props => {
+const Search = (props) => {
 	const val = props.match.params.val;
 	const { searchProd, handleSearch } = useContext(ProductContext);
 
@@ -17,8 +17,38 @@ const Search = props => {
 			<Navbar />
 			<Searchtab />
 
+			<section className='container-fluid bg-white'>
+				<div className='py-3'>
+					<Link to='/' className='site-font text-decoration-none'>
+						Home >{' '}
+					</Link>{' '}
+					<Link
+						to='#'
+						className='active site-font
+						text-decoration-none'>
+						{' '}
+						Search >
+					</Link>
+					<Link
+						to='#'
+						className='active site-font
+						text-decoration-none'>
+						{' '}
+						Search Results >
+					</Link>
+					<Link
+						to='#'
+						className='active site-font
+						text-decoration-none'>
+						{' '}
+						{val}
+					</Link>
+					<h1 className='site-font my-4'>{val} </h1>
+				</div>
+			</section>
+
 			<section className='container'>
-				<h4 className='site-font text-center'>
+				<h4 className='site-font text-center mt-5'>
 					{' '}
 					Search Result for <b>'{val}'</b>
 				</h4>
@@ -28,7 +58,7 @@ const Search = props => {
 				</p>
 				<div className='row gallery'>
 					{/* My Map method that loops through and return products listed in the database */}
-					{searchProd.map(product => {
+					{searchProd.map((product) => {
 						return (
 							<div className='col-lg-3 col-6' key={product._id}>
 								<div className='prod-card card mt-5'>
@@ -48,8 +78,7 @@ const Search = props => {
 									<Link
 										className='border buy-btn btn-sm btn-outline rounded text-center py-2 my-3 mx-3'
 										role='button'
-										to={`/product/${product._id}`}
-									>
+										to={`/product/${product._id}`}>
 										Buy
 									</Link>
 								</div>
