@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 //import Navbar Template
 import Navbar from './Navbar';
 
@@ -10,12 +10,11 @@ import PercentDiscount from '../images/percentdiscount.jpg';
 import JakobOwens from '../images/jakob-owens.jpg';
 
 //Favourite Brands Imports
-import AddidasAllStar from '../images/addidas-allstar.jpg';
-import BlackAirforceOne from '../images/black-airforce-one.jpg';
-import NikeAirMaxWhiteBlack from '../images/nike-airmax-white-black.jpg';
-import NikeJoyride from '../images/nike-joyride.jpg';
-import ReebokAirforce from '../images/reebook-airforce.jpg';
-import UmbroNeptune from '../images/umbro-neptune.jpg';
+import Nike from './view-templates/Nike';
+import Addidas from './view-templates/Addidas';
+import Reebook from './view-templates/Reebook';
+import Erke from './view-templates/Erke';
+
 //Import WatchSlider Template
 import WatchSlider from './view-templates/WatchSlider';
 
@@ -130,166 +129,16 @@ const Home = () => {
 				</div>
 				<hr />
 			</div>
-			<div className='container'>
-				<div className='row'>
-					{/* First Card Item */}
-					<div className='col-lg-4 col-sm-12'>
-						<a href='/' className='card-links'>
-							<div className='card mb-3 mt-3'>
-								<div className='row no-gutters'>
-									<div className='col-6'>
-										<img
-											src={AddidasAllStar}
-											className='card-img p-0'
-											alt=' '
-										/>
-									</div>
-									<div className='col-6'>
-										<div className='card-body'>
-											<h5 className='card-title text-center'>N 24, 000</h5>
-											<p className='card-text text-center'> Addidas All Star</p>
-											<p className='card-text text-center'>
-												{' '}
-												SIZE: <small>40 - 44</small>
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
 
-					{/* Second Card Item */}
-					<div className='col-lg-4 col-sm-12'>
-						<a href='/' className='card-links'>
-							<div className='card mb-3 mt-3'>
-								<div className='row no-gutters'>
-									<div className='col-6'>
-										<img
-											src={BlackAirforceOne}
-											className='card-img p-0'
-											alt=' '
-										/>
-									</div>
-									<div className='col-6'>
-										<div className='card-body'>
-											<h5 className='card-title text-center'>N 24, 000</h5>
-											<p className='card-text text-center'>
-												{' '}
-												Nike Airforce Black
-											</p>
-											<p className='card-text text-center'>
-												{' '}
-												SIZE: <small>40 - 44</small>
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
+			{/*Sneaker Shoe Brands Display*/}
+			<Nike />
 
-					{/* Third Card Item */}
-					<div className='col-lg-4 col-sm-12'>
-						<a href='/' className='card-links'>
-							<div className='card mb-3 mt-3'>
-								<div className='row no-gutters'>
-									<div className='col-6'>
-										<img
-											src={NikeAirMaxWhiteBlack}
-											className='card-img p-0'
-											alt=' '
-										/>
-									</div>
-									<div className='col-6'>
-										<div className='card-body'>
-											<h5 className='card-title text-center'>N 24, 000</h5>
-											<p className='card-text text-center'> Nike Air Max 90</p>
-											<p className='card-text text-center'>
-												{' '}
-												SIZE: <small>40 - 44</small>
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
+			<Addidas />
 
-					{/* Fourth Card Item */}
-					<div className='col-lg-4 col-sm-12'>
-						<a href='/' className='card-links'>
-							<div className='card mb-3 mt-3'>
-								<div className='row no-gutters'>
-									<div className='col-6'>
-										<img
-											src={ReebokAirforce}
-											className='card-img p-0'
-											alt=' '
-										/>
-									</div>
-									<div className='col-6'>
-										<div className='card-body'>
-											<h5 className='card-title text-center'>N 24, 000</h5>
-											<p className='card-text text-center'> Reebook Sneaker</p>
-											<p className='card-text text-center'>
-												{' '}
-												SIZE: <small>40 - 44</small>
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
+			<Reebook />
 
-					{/* Fifth Card Item */}
-					<div className='col-lg-4 col-sm-12'>
-						<a href='/' className='card-links'>
-							<div className='card mb-3 mt-3'>
-								<div className='row no-gutters'>
-									<div className='col-6'>
-										<img src={UmbroNeptune} className='card-img p-0' alt=' ' />
-									</div>
-									<div className='col-6'>
-										<div className='card-body'>
-											<h5 className='card-title text-center'>N 24, 000</h5>
-											<p className='card-text text-center'> Umbro Neptune</p>
-											<p className='card-text text-center'>
-												{' '}
-												SIZE: <small>40 - 44</small>
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-
-					{/* Sixth Card Item */}
-					<div className='col-lg-4 col-sm-12'>
-						<a href='/' className='card-links'>
-							<div className='card mb-3 mt-3'>
-								<div className='row no-gutters'>
-									<div className='col-6'>
-										<img src={NikeJoyride} className='card-img p-0' alt=' ' />
-									</div>
-									<div className='col-6'>
-										<div className='card-body'>
-											<h5 className='card-title text-center'>N 24, 000</h5>
-											<p className='card-text text-center'> Nike Joyride</p>
-											<p className='card-text text-center'>
-												{' '}
-												SIZE: <small>40 - 44</small>
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-			</div>
+			<Erke />
+			{/*End of Sneaker Shoe Brand Display*/}
 
 			{/* Second Slider Section (Watches)*/}
 			<div className='container-fluid bg-container my-3'>

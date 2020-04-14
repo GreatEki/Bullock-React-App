@@ -136,3 +136,73 @@ exports.getErke = async (req, res) => {
 		});
 	}
 };
+
+//DESC: 'This method fetches wristwatches products'
+//URL: '/api/product/watch'
+//REQUEST TYPE: GET request
+exports.getWristWatches = async (req, res) => {
+	try {
+		const wristWatches = await Product.find({
+			$or: [{ category: 'watch' }, { category: 'watches' }],
+		}).limit(10);
+
+		return res.status(200).json({
+			success: true,
+			message: 'Wrist Watches fetched',
+			count: wristWatches.length,
+			wristWatches,
+		});
+	} catch (err) {
+		return res.status(500).json({
+			success: false,
+			message: 'Server error',
+			error: err.message,
+		});
+	}
+};
+//DESC: 'This method fetches wallets '
+//URL: '/api/product/wallets'
+//REQUEST TYPE: GET request
+exports.getWallets = async (req, res) => {
+	try {
+		const wallets = await Product.find({
+			$or: [{ category: 'wallet' }, { category: 'wallets' }],
+		}).limit(3);
+
+		return res.status(200).json({
+			success: true,
+			message: 'Wallets fetched',
+			count: wallets.length,
+			wallets,
+		});
+	} catch (err) {
+		return res.status(500).json({
+			success: false,
+			message: 'Server error',
+			error: err.message,
+		});
+	}
+};
+//DESC: 'This method fetches shoes '
+//URL: '/api/product/shoes'
+//REQUEST TYPE: GET request
+exports.getShoes = async (req, res) => {
+	try {
+		const shoes = await Product.find({
+			$or: [{ category: 'shoe' }, { category: 'shoes' }],
+		}).limit(3);
+
+		return res.status(200).json({
+			success: true,
+			message: 'Shoes fetched',
+			count: shoes.length,
+			shoes,
+		});
+	} catch (err) {
+		return res.status(500).json({
+			success: false,
+			message: 'Server error',
+			error: err.message,
+		});
+	}
+};

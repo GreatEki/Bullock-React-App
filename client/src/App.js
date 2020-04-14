@@ -12,6 +12,7 @@ import Search from './components/Search';
 import Cart from './components/Cart';
 import CartContextProvider from './contexts/CartContext';
 import UserContextProvider from './contexts/UserContext';
+import HomeContextProvide from './contexts/HomeContext';
 import CheckOut from './components/CheckOut';
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
@@ -20,6 +21,7 @@ import Dashboard from './components/user/Dashboard';
 import PrivateRoute from './components/user/PrivateRoute';
 import context from './contexts/UserContext';
 import OrderContext from './contexts/OrderContext';
+import HomeContextProvider from './contexts/HomeContext';
 function App() {
 	return (
 		<div className='App'>
@@ -28,28 +30,30 @@ function App() {
 					<UserContextProvider>
 						<CartContextProvider>
 							<OrderContext>
-								<Route exact path='/' component={Home} />
-								<Route exact path='/shop' component={Shop} />
-								<Route exact path='/product/:id' component={Product} />
-								<Route path='/how-to-order' component={HowToOrder} />
-								<Route path='/contact' component={Contact} />
-								<Route path='/product/search/:val' component={Search} />
-								<Route path='/cart/overview' component={Cart} />
-								<Route path='/users/signup' component={SignUp} />
-								<Route path='/users/signin' component={SignIn} />
-								<PrivateRoute
-									exact
-									path='/users/auth/dashboard'
-									component={Dashboard}
-									auth={context.auth}
-								/>
+								<HomeContextProvider>
+									<Route exact path='/' component={Home} />
+									<Route exact path='/shop' component={Shop} />
+									<Route exact path='/product/:id' component={Product} />
+									<Route path='/how-to-order' component={HowToOrder} />
+									<Route path='/contact' component={Contact} />
+									<Route path='/product/search/:val' component={Search} />
+									<Route path='/cart/overview' component={Cart} />
+									<Route path='/users/signup' component={SignUp} />
+									<Route path='/users/signin' component={SignIn} />
+									<PrivateRoute
+										exact
+										path='/users/auth/dashboard'
+										component={Dashboard}
+										auth={context.auth}
+									/>
 
-								<PrivateRoute
-									exact
-									path='/cart/checkout'
-									component={CheckOut}
-									auth={context.auth}
-								/>
+									<PrivateRoute
+										exact
+										path='/cart/checkout'
+										component={CheckOut}
+										auth={context.auth}
+									/>
+								</HomeContextProvider>
 							</OrderContext>
 						</CartContextProvider>
 					</UserContextProvider>
