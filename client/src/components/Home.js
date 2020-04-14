@@ -1,13 +1,6 @@
-import React, { useContext } from 'react';
+import React from 'react';
 //import Navbar Template
 import Navbar from './Navbar';
-
-import BraveBull from '../images/brave-bull.jpg';
-
-//First Slider Imports
-import OpenShop from '../images/openshop.jpg';
-import PercentDiscount from '../images/percentdiscount.jpg';
-import JakobOwens from '../images/jakob-owens.jpg';
 
 //Favourite Brands Imports
 import Nike from './view-templates/Nike';
@@ -63,14 +56,14 @@ const Home = () => {
 								</div>
 								<div className='carousel-item'>
 									<img
-										src={OpenShop}
+										src='/webImage/openshop.jpg'
 										alt=''
 										className='d-block w-100 carousel-pics'
 									/>
 								</div>
 								<div className='carousel-item'>
 									<img
-										src={JakobOwens}
+										src='/webImage/jakob-owens.jpg'
 										alt=''
 										className='d-block w-100 carousel-pics'
 									/>

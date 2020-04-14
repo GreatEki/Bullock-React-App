@@ -184,9 +184,9 @@ a.card-links:hover {
 }
 
 .brand-items:hover {
-	border: 1px groove white;
+	background-color: whitesmoke;
 	z-index: 5;
-	transition: 1s ease-in;
+	transition: 0.5 ease-in;
 	text-decoration: none;
 }
 

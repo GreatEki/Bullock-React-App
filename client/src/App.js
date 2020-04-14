@@ -12,7 +12,6 @@ import Search from './components/Search';
 import Cart from './components/Cart';
 import CartContextProvider from './contexts/CartContext';
 import UserContextProvider from './contexts/UserContext';
-import HomeContextProvide from './contexts/HomeContext';
 import CheckOut from './components/CheckOut';
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';

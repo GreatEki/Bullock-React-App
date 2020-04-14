@@ -28,7 +28,7 @@ const WatchSlider = () => {
 		<Slider {...settings} className='p-2'>
 			{wristWatch.map((prod) => {
 				return (
-					<Link to={`/product/${prod._id}`}>
+					<Link to={`/product/${prod._id}`} key={prod._id}>
 						<img
 							src={`/products/${prod.imagePath}`}
 							alt='Watch-1'

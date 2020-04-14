@@ -35,7 +35,7 @@ const OrderContextProvider = (props) => {
 		localStorage.setItem('cartProducts', JSON.stringify([]));
 		localStorage.setItem('cartTotal', JSON.stringify(0));
 
-		const timer = setTimeout(() => {
+		setTimeout(() => {
 			setMsg('');
 		}, 3000);
 	};

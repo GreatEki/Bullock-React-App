@@ -6,7 +6,7 @@ const Shoes = () => {
 
 	useEffect(() => {
 		getShoes();
-		//eslint-disabe-next-line react-hooks/exhaustive/deps
+		//eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 	return (
 		<>
@@ -36,7 +36,8 @@ const Shoes = () => {
 											</p>
 											<p className='card-text text-center site-font'>
 												{' '}
-												brand: <small>{prod.brand}</small>
+												brand:{' '}
+												<small className='text-danger'>{prod.brand}</small>
 											</p>
 										</div>
 									</div>
