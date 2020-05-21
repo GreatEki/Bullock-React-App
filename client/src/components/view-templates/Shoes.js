@@ -18,7 +18,7 @@ const Shoes = () => {
 								to={`/product/${prod._id}`}
 								className='col-lg-4 shoe-and-wallets'
 								key={prod._id}>
-								<div className='row no-gutters'>
+								<div className='row no-gutters my-4'>
 									<div className='col-6'>
 										<img
 											src={`/products/${prod.imagePath}`}
