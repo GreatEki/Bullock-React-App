@@ -20,7 +20,7 @@ const Navbar = () => {
 							type='button'
 							data-toggle='collapse'
 							data-target='#mainNavbar'>
-							<i className='navb-toggler-icon fas fa-bars'></i>
+							<i className='nav-toggler-icon fas fa-bars'></i>
 						</button>
 
 						<Link to='/' className='navbar-brand ml-lg-3'>

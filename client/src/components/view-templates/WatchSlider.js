@@ -27,7 +27,7 @@ const WatchSlider = () => {
 			{
 				breakpoint: 1024,
 				settings: {
-					slidesToShow: 4,
+					slidesToShow: 3,
 					slidesToScroll: 1,
 				},
 			},
@@ -44,16 +44,16 @@ const WatchSlider = () => {
 		<Slider {...settings} className='p-2'>
 			{wristWatch.map((prod) => {
 				return (
-					<Link to={`/product/${prod._id}`} key={prod._id}>
+					<Link to={`/product/${prod._id}`} key={prod._id} className=''>
 						<img
 							src={`/products/${prod.imagePath}`}
 							alt='Watch-1'
-							className='watch-slider-img'
+							className='watch-slider-img h-center'
 						/>
-						<span className='border mt-2 mx-5 btn btn-outline-warning rounded-pill'>
+						<button className='border mt-2 watchBtn btn btn-outline-warning rounded-pill'>
 							{' '}
 							{prod.title}
-						</span>
+						</button>
 						<p className='text-center site-font'>
 							<del>N</del> {prod.price}
 						</p>

@@ -297,11 +297,13 @@ label.payment {
 }
 
 @media (min-width: 100px) and (max-width: 767px) {
+	/* Navbar Page Styling */
 	.header-text {
 		font-size: 18px;
 
 		letter-spacing: 4px;
 	}
+
 	.card-header {
 		display: none;
 	}
@@ -332,9 +334,14 @@ label.payment {
 	.shoe-and-wallets .no-gutters {
 		background-color: white;
 	}
+
+	/* Contact Page Styling */
+	.d-flex.flex-column p.address {
+		font-size: 14px;
+	}
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1023px) {
 	.shoe-and-wallets .no-gutters {
 		background-color: white;
 	}
@@ -347,4 +354,8 @@ label.payment {
 		width: 200px;
 		height: 200px;
 	} */
+
+	.d-flex.flex-column p.address {
+		font-size: 22px;
+	}
 }
