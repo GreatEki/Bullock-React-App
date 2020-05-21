@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 //import Navbar Template
 import Navbar from './Navbar';
 
@@ -18,6 +18,11 @@ import SearchTab from './view-templates/Searchtab';
 import Footer from './view-templates/Footer';
 
 const Home = () => {
+	useEffect(() => {
+		window.scrollTo(0, 0);
+
+		//eslint-disable-next-line react-hooks/exhaustive-deps
+	});
 	return (
 		<div className='wrapper'>
 			<Navbar />

@@ -88,6 +88,7 @@ const OrderContextProvider = (props) => {
 				msg,
 				handleSubmitOrder,
 				selectPayChoice,
+				isSubmitted,
 			}}>
 			{props.children}
 		</OrderContext.Provider>

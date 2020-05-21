@@ -17,7 +17,7 @@ const Addidas = () => {
 				<div className='row'>
 					{addidasProd.map((prod) => {
 						return (
-							<div className='col-lg-4 col-sm-12' key={prod._id}>
+							<div className='col-md-4 col-sm-12' key={prod._id}>
 								<Link to={`/product/${prod._id}`} className='card-links'>
 									<div className='card mb-3 mt-3'>
 										<div className='row no-gutters brand-items'>
@@ -34,7 +34,7 @@ const Addidas = () => {
 														<del className='del'>N</del>
 														{prod.price}
 													</h5>
-													<p className='card-text text-center text-muted'>
+													<p className='card-text text-center text-muted prod-title'>
 														{' '}
 														{prod.title}
 													</p>

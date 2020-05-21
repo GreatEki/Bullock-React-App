@@ -3,6 +3,7 @@ import Home from './components/Home';
 import {
 	BrowserRouter,
 	Route,
+	Switch,
 } from 'react-router-dom/cjs/react-router-dom.min';
 import Shop from './components/Shop';
 import ProductContextProvider from './contexts/ProductContext';
@@ -30,28 +31,34 @@ function App() {
 						<CartContextProvider>
 							<OrderContext>
 								<HomeContextProvider>
-									<Route exact path='/' component={Home} />
-									<Route exact path='/shop' component={Shop} />
-									<Route exact path='/product/:id' component={Product} />
-									<Route path='/how-to-order' component={HowToOrder} />
-									<Route path='/contact' component={Contact} />
-									<Route path='/product/search/:val' component={Search} />
-									<Route path='/cart/overview' component={Cart} />
-									<Route path='/users/signup' component={SignUp} />
-									<Route path='/users/signin' component={SignIn} />
-									<PrivateRoute
-										exact
-										path='/users/auth/dashboard'
-										component={Dashboard}
-										auth={context.auth}
-									/>
+									<Switch>
+										<Route exact path='/' component={Home} />
+										<Route exact path='/shop' component={Shop} />
+										<Route exact path='/product/:id' component={Product} />
+										<Route exact path='/how-to-order' component={HowToOrder} />
+										<Route exact path='/contact' component={Contact} />
+										<Route
+											exact
+											path='/product/search/:val'
+											component={Search}
+										/>
+										<Route exact path='/cart/overview' component={Cart} />
+										<Route exact path='/users/signup' component={SignUp} />
+										<Route exact path='/users/signin' component={SignIn} />
+										<PrivateRoute
+											exact
+											path='/users/auth/dashboard'
+											component={Dashboard}
+											auth={context.auth}
+										/>
 
-									<PrivateRoute
-										exact
-										path='/cart/checkout'
-										component={CheckOut}
-										auth={context.auth}
-									/>
+										<PrivateRoute
+											exact
+											path='/cart/checkout'
+											component={CheckOut}
+											auth={context.auth}
+										/>
+									</Switch>
 								</HomeContextProvider>
 							</OrderContext>
 						</CartContextProvider>

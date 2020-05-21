@@ -47,7 +47,6 @@ body {
 		sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	overflow-x: hidden;
 	background-color: whitesmoke;
 }
 
@@ -69,8 +68,14 @@ code {
 }
 
 .content-wrapper {
-	min-height: 200%;
+	min-height: 100vh;
+	overflow-x: hidden;
 }
+
+.h-center {
+	margin: 0 auto;
+}
+
 header.container-fluid {
 	background-color: white;
 	float: left;
@@ -125,6 +130,9 @@ a.nav-item.nav-link {
 	font-size: 22px !important;
 	color: white !important;
 }
+a.nav-item.nav-link.active {
+	color: gold !important;
+}
 
 /* Home Page */
 .card.offer {
@@ -162,7 +170,7 @@ a.card-links:hover {
 	text-decoration-color: blue;
 	z-index: -1;
 	transition: 1s;
-	padding: 0.1rem 0.1rem;
+	/* padding: 0.1rem 0.1rem; */
 }
 
 .del {
@@ -171,9 +179,9 @@ a.card-links:hover {
 }
 
 /* Shop Page Styling */
-.shop-wrapper {
+/* .shop-wrapper {
 	min-height: 200%;
-}
+} */
 .prod-display {
 	min-width: 100%;
 }
@@ -188,6 +196,7 @@ a.card-links:hover {
 	z-index: 5;
 	transition: 0.5 ease-in;
 	text-decoration: none;
+	box-shadow: 1px 4px;
 }
 
 .shoe-and-wallets:hover {
@@ -195,10 +204,15 @@ a.card-links:hover {
 	z-index: 1;
 	background: white;
 	transition: ease-in-out 0.5s;
+	box-shadow: 1px 2px whitesmoke;
 }
 
 .prod-card {
 	background: white;
+}
+
+.prod-title {
+	font-size: 14px;
 }
 
 .buy-btn {

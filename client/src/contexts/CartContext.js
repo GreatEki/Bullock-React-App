@@ -73,6 +73,7 @@ const CartContextProvider = (props) => {
 				totalPrice,
 				deliveryRate,
 				removeItem,
+				setDeliveryRate,
 			}}>
 			{props.children}
 		</CartContext.Provider>

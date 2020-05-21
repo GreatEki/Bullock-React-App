@@ -49,3 +49,13 @@ a i.fab.fa-facebook:hover {
 a i.fab.fa-instagram:hover {
 	color: palevioletred;
 }
+
+@media (min-width: 100px) and (max-width: 767px) {
+	.footer-font {
+		font-size: 16px;
+	}
+
+	.footer-nav {
+		display: none;
+	}
+}

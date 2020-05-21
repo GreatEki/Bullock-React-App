@@ -81,9 +81,9 @@ const Product = (props) => {
 									className='form-control'
 									onChange={(e) => setSize(e.target.value)}
 									value={size}>
-									<optgroup label='Select option N/A for wallet and watch'>
+									<optgroup label='USe the option N/A for wallet and watch'>
 										<option value=''> nil</option>
-										<option value='not_available'> N/A </option>
+										<option value='not-available'> N/A </option>
 									</optgroup>
 									<optgroup label='Available Shoe Sizes'>
 										<option value='size_32'>Size 32</option>
@@ -116,6 +116,7 @@ const Product = (props) => {
 								/>
 
 								<button
+									onClick={(e) => (!size || !qty ? e.preventDefault() : null)}
 									className='btn buy-btn btn-block rounded btn-md btn-warning'
 									type='submit'>
 									Add To Cart

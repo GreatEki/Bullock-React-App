@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { CartContext } from '../contexts/CartContext';
 import { UserContext } from '../contexts/UserContext';
 
@@ -30,36 +30,36 @@ const Navbar = () => {
 						<div className='collapse navbar-collapse'> </div>
 						<div className='collapse navbar-collapse' id='mainNavbar'>
 							<ul className='navbar-nav mr-5'>
-								<Link className='nav-item nav-link site-font' to='/'>
+								<NavLink className='nav-item nav-link site-font' to='/'>
 									{' '}
 									Home{' '}
-								</Link>
+								</NavLink>
 
 								{auth ? (
-									<Link
+									<NavLink
 										className='nav-item nav-link site-font'
 										to='/users/auth/dashboard'>
 										{' '}
 										Dashboard{' '}
-									</Link>
+									</NavLink>
 								) : (
 									<p></p>
 								)}
 
-								<Link className='nav-item nav-link site-font' to='/shop'>
+								<NavLink className='nav-item nav-link site-font' to='/shop'>
 									{' '}
 									Shop
-								</Link>
-								<Link
+								</NavLink>
+								<NavLink
 									className='nav-item nav-link site-font'
 									to='/how-to-order'>
 									{' '}
 									How To Order
-								</Link>
-								<Link className='nav-item nav-link site-font' to='/contact'>
+								</NavLink>
+								<NavLink className='nav-item nav-link site-font' to='/contact'>
 									{' '}
 									Contact US
-								</Link>
+								</NavLink>
 							</ul>
 
 							<div className='collapse navbar-collapse'> </div>
