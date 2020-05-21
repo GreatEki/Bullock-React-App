@@ -226,6 +226,11 @@ a.card-links:hover {
 	color: black;
 }
 
+/* Cart Page Styling */
+.title {
+	color: white;
+}
+
 /* Product Page Styling */
 .img-product {
 	width: 70%;
@@ -289,4 +294,32 @@ label.payment {
 	width: 90% !important;
 	height: 4rem;
 	font-weight: bolder;
+}
+
+@media (min-width: 100px) and (max-width: 767px) {
+	.card-header {
+		display: none;
+	}
+
+	.title {
+		color: black;
+	}
+
+	.d-inline.cart-image {
+		width: 50px;
+		height: 50px;
+	}
+
+	.prod-price {
+		font-size: 14px;
+	}
+
+	p.prod-text {
+		font-size: 10px;
+	}
+
+	.rmv-btn {
+		/* width: 100%; */
+		font-size: 10px;
+	}
 }
