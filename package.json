@@ -1,5 +1,5 @@
 {
-<<<<<<< HEAD
+
 	"name": "e-store",
 	"version": "1.0.0",
 	"description": "Full Stack Ecommerce web store",
@@ -32,34 +32,4 @@
 	"devDependencies": {
 		"nodemon": "^2.0.2"
 	}
-=======
-  "name": "e-store",
-  "version": "1.0.0",
-  "description": "Full Stack Ecommerce web store",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "server": "nodemon server.js",
-    "client": "cd client && npm start",
-    "dev": "concurrently \"npm run client\" \"npm run server\""
-  },
-  "keywords": [
-    "E",
-    "Commerce"
-  ],
-  "author": "Ekene Idiagbor",
-  "license": "MIT",
-  "dependencies": {
-    "bcrypt": "^4.0.1",
-    "bcryptjs": "^2.4.3",
-    "concurrently": "^5.0.2",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.8.7"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.2"
-  }
->>>>>>> origin/master
 }
