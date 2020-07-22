@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css?family=Acme|Archivo+Narrow|Bangers|Anton|Dokdo|Lato|Pacifico|Allan');
+
+:root {
+	--bg-color: whitesmoke;
+	--site-font: Archivo Narrow;
+	--site-text-color: rgb(43, 42, 42);
+	--bg-secondary-color: gold;
+	--site-font-2: Lato sans-serif;
+}
+
+.site-font {
+	font-family: var(--site-font);
+	color: var(--site-text-color);
+}
+
+.site-font-lg {
+	letter-spacing: 2px;
+	line-height: 2rem;
+	font-size: 18px;
+	font-family: var(--site-font);
+}
+
+.site-font-2 {
+	font-size: 18px;
+	letter-spacing: 2px;
+	line-height: 2rem;
+}
+
+.site-font-sm {
+	font-family: var(--site-font);
+	color: var(--site-text-color);
+	font-size: 14px;
+}
+
+.bg-color {
+	background-color: var(--bg-secondary-color);
+}
+
+.bg-container {
+	background-color: var(--bgcolor);
+}
+
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: whitesmoke;
+}
+
+html body {
+	overflow-x: hidden;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+		monospace;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.wrapper {
+	overflow-x: hidden;
+}
+
+.content-wrapper {
+	min-height: 100vh;
+	overflow-x: hidden;
+}
+
+.h-center {
+	margin: 0 auto;
+}
+
+header.container-fluid {
+	background-color: white;
+	float: left;
+	clear: none; /*Float left and clear none here is used to remove the white spaces between the divs*/
+}
+.header-text {
+	font-size: 2rem;
+	letter-spacing: 1rem;
+	font-family: Lucida Calligraphy;
+	color: black;
+}
+
+.logo {
+	border: 5px solid yellow;
+	border-radius: 90%;
+	width: 60%;
+	height: 70px;
+}
+
+.col-12.col-lg-8 .lg-heading {
+	font-size: 2rem;
+	font-weight: bolder;
+	text-align: center;
+	letter-spacing: 5rem;
+}
+
+.lg-heading small {
+	font-size: 32px;
+}
+
+.motto {
+	font-style: italic;
+}
+
+img.brand-sponsor {
+	height: 20%;
+	width: 15%;
+}
+
+.dropdown-item.auth {
+	font-family: Lato;
+	color: blue !important;
+	font-size: 14px !important;
+}
+
+/* Navigation*/
+
+.bg-nav {
+	background-color: black;
+}
+a.nav-item.nav-link {
+	font-size: 22px !important;
+	color: white !important;
+}
+a.nav-item.nav-link.active {
+	color: white !important;
+}
+
+/* Home Page */
+.card.offer {
+	height: 350px;
+}
+
+.h1-text {
+	font-family: Anton sans-serif;
+	font-weight: bold;
+	font-size: 65px;
+}
+
+.carousel-pics {
+	width: 100%;
+	height: 800px;
+}
+
+.card-title.stand {
+	font-family: Acme;
+	font-size: 24px;
+	font-weight: bolder;
+}
+
+.types {
+	background: var(--bg-secondary-color);
+}
+
+a.card-links {
+	color: rgb(61, 54, 54);
+	text-decoration: none;
+	font-family: Archivo Narrow;
+}
+
+a.card-links:hover {
+	text-decoration-color: blue;
+	/* text-decoration-color: black; */
+	z-index: -1;
+	transition: 1s;
+	/* padding: 0.1rem 0.1rem; */
+}
+
+.del {
+	text-decoration: line-through;
+	text-decoration-style: double;
+}
+
+/* Shop Page Styling */
+/* .shop-wrapper {
+	min-height: 200%;
+} */
+.prod-display {
+	min-width: 100%;
+}
+
+.shop-pic {
+	width: 100%;
+	height: 200px;
+}
+
+.brand-items:hover {
+	background-color: whitesmoke;
+	z-index: 5;
+	transition: 0.5 ease-in;
+	text-decoration: none;
+	/* transform: scale(1.1); */
+	box-shadow: 1px 5px lightblue;
+}
+
+.shoe-and-wallets:hover {
+	text-decoration: none;
+	z-index: 1;
+	background: white;
+	transition: ease-in-out 0.5s;
+	box-shadow: 1px 2px whitesmoke;
+}
+
+.prod-card {
+	background: white;
+}
+
+.prod-title {
+	font-size: 14px;
+}
+
+.buy-btn {
+	color: black !important;
+}
+
+.buy-btn:hover {
+	text-decoration: none;
+	font-weight: bold;
+	background-color: var(--bg-secondary-color);
+	color: black;
+}
+
+/* Cart Page Styling */
+.title {
+	color: white;
+}
+
+/* Product Page Styling */
+.img-product {
+	width: 70%;
+	height: 300px;
+	margin: 0% 25% 0% 10%;
+}
+
+.error-input {
+	border: red, 4px;
+}
+
+/* Contact Page Styling */
+.d-flex.flex-column .address {
+	color: white;
+	background: black;
+	margin: 20px 20px;
+	font-size: 1.5rem;
+	padding: 0.5rem 1.5rem;
+	border: 2px solid yellow;
+	text-align: center;
+}
+
+.d-flex.flex-column .address:hover {
+	transition: 1s;
+	padding: 0.1rem 0.5rem;
+	z-index: 2;
+	font-size: 2.5rem;
+}
+
+.d-flex.flex-column .address span {
+	color: gold;
+}
+
+.days-open {
+	margin-left: 15%;
+	font-weight: bolder;
+	margin-bottom: 20%;
+}
+
+.cart-image {
+	width: 100px;
+	height: 100px;
+	margin: 0%;
+}
+
+/* Checkout Page Styling*/
+input[type='radio'] {
+	height: 25px;
+	width: 25px;
+	background-color: gold;
+}
+
+label.payment {
+	padding-left: 10px;
+	min-height: 25px;
+	font-weight: bold;
+	margin-top: 0%;
+}
+
+.place-order {
+	width: 90% !important;
+	height: 4rem;
+	font-weight: bolder;
+}
+
+@media (min-width: 100px) and (max-width: 767px) {
+	/* Navbar Page Styling */
+	.header-text {
+		font-size: 18px;
+
+		letter-spacing: 4px;
+	}
+
+	.card-header {
+		display: none;
+	}
+
+	.title {
+		color: black;
+	}
+
+	.d-inline.cart-image {
+		width: 50px;
+		height: 50px;
+	}
+
+	.prod-price {
+		font-size: 14px;
+	}
+
+	p.prod-text {
+		font-size: 10px;
+	}
+
+	.rmv-btn {
+		/* width: 100%; */
+		font-size: 10px;
+	}
+
+	/* Shoe and Wallets Styling */
+	.shoe-and-wallets .no-gutters {
+		background-color: white;
+	}
+
+	/* Contact Page Styling */
+	.d-flex.flex-column p.address {
+		font-size: 14px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+	.shoe-and-wallets .no-gutters {
+		background-color: white;
+	}
+	.shoe-and-wallets .card-body {
+		height: 100%;
+		padding: 100px;
+	}
+
+	/* .shoe-and-wallets img {
+		width: 200px;
+		height: 200px;
+	} */
+
+	.d-flex.flex-column p.address {
+		font-size: 22px;
+	}
+}

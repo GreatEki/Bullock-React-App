@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Acme|Archivo+Narrow|Bangers|Anton|Dokdo|Lato|Pacifico|Allan');
+:root {
+	--bg-color: whitesmoke;
+	--site-font: Archivo Narrow;
+	--site-text-color: rgb(43, 42, 42);
+}
+
+.site-font {
+	font-family: var(--site-font);
+	color: var(--site-text-color);
+}
+.bg-container {
+	background-color: var(--bgcolor);
+}
+
+.watchSlider:hover {
+	text-decoration: none;
+}
+
+.watch-slider-img {
+	width: 90%;
+	height: 200px;
+	border-color: rgb(89, 89, 131);
+}
+
+.watchBtn {
+	margin: 0 25%;
+}
+
+.del {
+	text-decoration: line-through;
+	text-decoration-style: double;
+}
