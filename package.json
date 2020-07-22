@@ -1,5 +1,4 @@
 {
-
 	"name": "e-store",
 	"version": "1.0.0",
 	"description": "Full Stack Ecommerce web store",
@@ -31,5 +30,8 @@
 	},
 	"devDependencies": {
 		"nodemon": "^2.0.2"
+	},
+	"engines": {
+		"node": "10.15.3"
 	}
 }
