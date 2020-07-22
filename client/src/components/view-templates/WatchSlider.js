@@ -44,14 +44,10 @@ const WatchSlider = () => {
 		<Slider {...settings} className='p-2'>
 			{wristWatch.map((prod) => {
 				return (
-<<<<<<< HEAD
 					<Link
 						to={`/product/${prod._id}`}
 						key={prod._id}
 						className='watchSlider'>
-=======
-					<Link to={`/product/${prod._id}`} key={prod._id} className=''>
->>>>>>> origin/master
 						<img
 							src={`/products/${prod.imagePath}`}
 							alt='Watch-1'
@@ -61,11 +57,7 @@ const WatchSlider = () => {
 							{' '}
 							{prod.title}
 						</button>
-<<<<<<< HEAD
 						<p className='text-center site-font watchPrice'>
-=======
-						<p className='text-center site-font'>
->>>>>>> origin/master
 							<del>N</del> {prod.price}
 						</p>
 					</Link>

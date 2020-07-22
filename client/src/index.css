@@ -131,11 +131,7 @@ a.nav-item.nav-link {
 	color: white !important;
 }
 a.nav-item.nav-link.active {
-<<<<<<< HEAD
 	color: white !important;
-=======
-	color: gold !important;
->>>>>>> origin/master
 }
 
 /* Home Page */
@@ -172,10 +168,7 @@ a.card-links {
 
 a.card-links:hover {
 	text-decoration-color: blue;
-<<<<<<< HEAD
 	/* text-decoration-color: black; */
-=======
->>>>>>> origin/master
 	z-index: -1;
 	transition: 1s;
 	/* padding: 0.1rem 0.1rem; */
@@ -204,12 +197,9 @@ a.card-links:hover {
 	z-index: 5;
 	transition: 0.5 ease-in;
 	text-decoration: none;
-<<<<<<< HEAD
+
 	/* transform: scale(1.1); */
 	box-shadow: 1px 5px lightblue;
-=======
-	box-shadow: 1px 4px;
->>>>>>> origin/master
 }
 
 .shoe-and-wallets:hover {
