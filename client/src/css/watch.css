@@ -13,10 +13,13 @@
 	background-color: var(--bgcolor);
 }
 
+<<<<<<< HEAD
 .watchSlider:hover {
 	text-decoration: none;
 }
 
+=======
+>>>>>>> origin/master
 .watch-slider-img {
 	width: 90%;
 	height: 200px;
