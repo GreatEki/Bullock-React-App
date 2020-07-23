@@ -1,7 +1,7 @@
 const User = require('../models/user');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const jwtKey = require('../config/database').jwtKey;
+// const jwtKey = require('../config/database').jwtKey;
 
 //REQUEST TYPE: POST
 //URL: '/api/users/signup'
@@ -81,7 +81,7 @@ exports.signin = async (req, res) => {
 
 				const token = await jwt.sign(
 					{ email: user.email, userId: user._id },
-					jwtKey,
+					process.env.jwtKey,
 					{ expiresIn: '1h' }
 				);
 				return res.status(201).json({
