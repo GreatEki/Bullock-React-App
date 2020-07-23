@@ -52,7 +52,7 @@ const OrderContextProvider = (props) => {
 
 		try {
 			const res = await axios.post(
-				`http://localhost:8080/api/orders/place-order`,
+				`${process.env.SERVER}/api/orders/place-order`,
 				order,
 				config
 			);
@@ -67,7 +67,7 @@ const OrderContextProvider = (props) => {
 
 	const getUserOrder = async (id) => {
 		try {
-			const res = await axios.get(`http://localhost:8080/api/orders/${id}`);
+			const res = await axios.get(`${process.env.SERVER}/api/orders/${id}`);
 
 			if (!res) {
 				setOrders([]);
