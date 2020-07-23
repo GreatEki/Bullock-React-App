@@ -81,7 +81,7 @@ exports.signin = async (req, res) => {
 
 				const token = await jwt.sign(
 					{ email: user.email, userId: user._id },
-					process.env.jwtKey,
+					process.env.JWT_KEY,
 					{ expiresIn: '1h' }
 				);
 				return res.status(201).json({
