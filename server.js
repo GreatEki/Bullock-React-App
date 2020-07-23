@@ -44,7 +44,7 @@ app.use('/api/orders', require('./routes/orders'));
 //var productSeeder = require('./seeder/product-seeder');
 //productSeeder;
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 4500;
 
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static('client/build'));
