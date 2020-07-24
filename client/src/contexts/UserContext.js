@@ -21,7 +21,7 @@ const UserContextProvider = (props) => {
 
 		try {
 			const res = await axios.post(
-				`${process.env.SERVER}/api/users/signup`,
+				`${process.env.REACT_APP_SERVER}/api/users/signup`,
 				newUser,
 				config
 			);
@@ -43,7 +43,7 @@ const UserContextProvider = (props) => {
 		};
 		try {
 			const res = await axios.post(
-				`${process.env.SERVER}/api/users/signin`,
+				`${process.env.REACT_APP_SERVER}/api/users/signin`,
 				user,
 				config
 			);

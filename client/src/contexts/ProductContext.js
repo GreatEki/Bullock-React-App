@@ -11,7 +11,7 @@ const ProductContextProvider = (props) => {
 
 	const retrieveProd = async () => {
 		try {
-			const res = await axios.get(`${process.env.SERVER}/api/shop`);
+			const res = await axios.get(`${process.env.REACT_APP_SERVER}/api/shop`);
 
 			setProducts(res.data);
 			setHasLoaded(true);
@@ -23,7 +23,9 @@ const ProductContextProvider = (props) => {
 
 	const getProd = async (id) => {
 		try {
-			const res = await axios.get(`${process.env.SERVER}/api/product/${id}`);
+			const res = await axios.get(
+				`${process.env.REACT_APP_SERVER}/api/product/${id}`
+			);
 
 			setProduct(res.data);
 		} catch (err) {
@@ -34,7 +36,7 @@ const ProductContextProvider = (props) => {
 	const handleSearch = async (val) => {
 		try {
 			const res = await axios.get(
-				`${process.env.SERVER}/api/product/search/${val}`
+				`${process.env.REACT_APP_SERVER}/api/product/search/${val}`
 			);
 
 			setSearchProd(res.data);

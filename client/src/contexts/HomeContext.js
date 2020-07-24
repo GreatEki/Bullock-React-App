@@ -17,7 +17,9 @@ const HomeContextProvider = (props) => {
 	//URL: '/api/products/nike'
 	const getNikeProducts = async () => {
 		try {
-			const res = await axios.get(`${process.env.SERVER}/api/product/nike`);
+			const res = await axios.get(
+				`${process.env.REACT_APP_SERVER}/api/product/nike`
+			);
 
 			setNikeProd(res.data.nikeSneakers);
 			setIsLoading(true);
@@ -31,7 +33,9 @@ const HomeContextProvider = (props) => {
 	//URL: '/api/products/addidas'
 	const getAddidasProducts = async () => {
 		try {
-			const res = await axios.get(`${process.env.SERVER}/api/product/addidas`);
+			const res = await axios.get(
+				`${process.env.REACT_APP_SERVER}/api/product/addidas`
+			);
 
 			setAddidasProd(res.data.addidasSneakers);
 			setIsLoading(true);
@@ -45,7 +49,9 @@ const HomeContextProvider = (props) => {
 	//URL: '/api/products/reebook
 	const getReebookProducts = async () => {
 		try {
-			const res = await axios.get(`${process.env.SERVER}/api/product/reebook`);
+			const res = await axios.get(
+				`${process.env.REACT_APP_SERVER}/api/product/reebook`
+			);
 
 			setReebookProd(res.data.reebookSneakers);
 			setIsLoading(true);
@@ -59,7 +65,9 @@ const HomeContextProvider = (props) => {
 	//URL: '/api/products/erke
 	const getErkeProducts = async () => {
 		try {
-			const res = await axios.get(`${process.env.SERVER}/api/product/erke`);
+			const res = await axios.get(
+				`${process.env.REACT_APP_SERVER}/api/product/erke`
+			);
 
 			setErkeProd(res.data.erkeSneakers);
 			setIsLoading(true);
@@ -73,7 +81,9 @@ const HomeContextProvider = (props) => {
 	//URL: '/api/products/watch
 	const getWatches = async () => {
 		try {
-			const res = await axios.get(`${process.env.SERVER}/api/product/watch`);
+			const res = await axios.get(
+				`${process.env.REACT_APP_SERVER}/api/product/watch`
+			);
 
 			setWristWatch(res.data.wristWatches);
 			setIsLoading(true);
@@ -87,7 +97,9 @@ const HomeContextProvider = (props) => {
 	//URL: '/api/products/wallets
 	const getWallets = async () => {
 		try {
-			const res = await axios.get(`${process.env.SERVER}/api/product/wallets`);
+			const res = await axios.get(
+				`${process.env.REACT_APP_SERVER}/api/product/wallets`
+			);
 
 			setWallets(res.data.wallets);
 			setIsLoading(true);
@@ -101,7 +113,9 @@ const HomeContextProvider = (props) => {
 	//URL: '/api/products/shoes
 	const getShoes = async () => {
 		try {
-			const res = await axios.get(`${process.env.SERVER}/api/product/shoes`);
+			const res = await axios.get(
+				`${process.env.REACT_APP_SERVER}/api/product/shoes`
+			);
 
 			setShoes(res.data.shoes);
 			setIsLoading(true);
